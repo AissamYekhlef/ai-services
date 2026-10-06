@@ -1,12 +1,13 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AI Consulting &amp; Automation for Business | Start Your AI Discovery</title>
 <meta name="description" content="Find out where AI, automation and AI agents can save your business time, cut costs and create new opportunities. Take the 5–10 minute AI Discovery and get personalized recommendations.">
-<meta name="theme-color" content="#0b1020">
+<meta name="theme-color" content="#07141f">
 <link rel="canonical" href="https://example.com/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%230a8f8b'/%3E%3Cstop offset='1' stop-color='%232f7df6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='10' fill='url(%23g)'/%3E%3Cpath d='M16 6l2.2 7.8L26 16l-7.8 2.2L16 26l-2.2-7.8L6 16l7.8-2.2z' fill='%23fff'/%3E%3Ccircle cx='25' cy='7' r='3' fill='%23ffb020'/%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Discover Where AI Can Actually Make a Difference in Your Business">
 <meta property="og:description" content="A 5–10 minute AI Discovery that identifies your best AI and automation opportunities. No technical knowledge required.">
@@ -16,8 +17,8 @@
 {
   "@context": "https://schema.org",
   "@graph": [
-    {"@type": "Organization", "name": "Lumina AI", "url": "https://example.com/", "description": "AI consulting, AI automation and custom AI development for businesses."},
-    {"@type": "Service", "name": "AI Discovery", "serviceType": "AI consulting and business process automation", "provider": {"@type": "Organization", "name": "Lumina AI"}, "description": "An interactive discovery that identifies where AI, automation and AI agents can create value in a business."},
+    {"@type": "Organization", "name": "Dalil AI", "url": "https://example.com/", "description": "AI consulting, AI automation and custom AI development for businesses."},
+    {"@type": "Service", "name": "AI Discovery", "serviceType": "AI consulting and business process automation", "provider": {"@type": "Organization", "name": "Dalil AI"}, "description": "An interactive discovery that identifies where AI, automation and AI agents can create value in a business."},
     {"@type": "FAQPage", "mainEntity": [
       {"@type": "Question", "name": "Do I need technical knowledge?", "acceptedAnswer": {"@type": "Answer", "text": "No. The discovery process is designed for business users."}},
       {"@type": "Question", "name": "How long does the discovery take?", "acceptedAnswer": {"@type": "Answer", "text": "Approximately 5–10 minutes."}},
@@ -31,11 +32,11 @@
 </script>
 <style>
 :root{
-  --bg:#f7f8fc; --surface:#fff; --ink:#0b1020; --ink-2:#4a5270; --ink-3:#7b84a3;
-  --line:#e4e7f2; --brand:#5b5bf0; --brand-2:#22b8cf; --brand-ink:#3a3ad1;
-  --soft:#eef0fe; --ok:#12a36b; --dark:#0b1020; --dark-2:#141b34;
-  --r:20px; --r-sm:12px; --shadow:0 1px 2px rgba(11,16,32,.04),0 12px 32px -12px rgba(40,50,120,.18);
-  --font:ui-sans-serif,-apple-system,"Segoe UI",Inter,Roboto,"Helvetica Neue",Arial,sans-serif;
+  --bg:#f5f9fa; --surface:#fff; --ink:#07141f; --ink-2:#44576a; --ink-3:#74879a;
+  --line:#dfe9ec; --brand:#0a8f8b; --brand-2:#2f7df6; --brand-ink:#087572; --accent:#ffb020;
+  --soft:#e7f6f5; --ok:#12a36b; --dark:#07141f; --dark-2:#0d2233;
+  --r:20px; --r-sm:12px; --shadow:0 1px 2px rgba(7,20,31,.04),0 12px 32px -12px rgba(10,100,110,.22);
+  --font:ui-sans-serif,-apple-system,"Segoe UI",Inter,Roboto,"Noto Sans Arabic","Helvetica Neue",Tahoma,Arial,sans-serif;
 }
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth;scroll-padding-top:84px}
@@ -43,6 +44,9 @@ body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1
 img,svg{max-width:100%;display:block}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--brand);outline-offset:3px;border-radius:8px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;inset-inline-start:8px;top:8px;background:#fff;padding:10px 14px;border-radius:8px;z-index:300;transform:translateY(-300%)}
+.skip:focus{transform:none}
 .wrap{width:min(1160px,100% - 40px);margin-inline:auto}
 section{padding:clamp(64px,9vw,120px) 0}
 .eyebrow{display:inline-flex;gap:8px;align-items:center;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--brand-ink);background:var(--soft);padding:6px 12px;border-radius:99px}
@@ -53,28 +57,51 @@ h3{font-size:1.15rem;font-weight:650;letter-spacing:-.01em}
 .lead{font-size:clamp(1.05rem,1.6vw,1.25rem);color:var(--ink-2);max-width:60ch}
 .center{text-align:center}.center .lead{margin-inline:auto}
 .grad{background:linear-gradient(100deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+/* Arabic typography: no negative tracking (it breaks letter joining), taller lines, no uppercase */
+:lang(ar) h1,:lang(ar) h2,:lang(ar) h3{letter-spacing:0;line-height:1.35}
+:lang(ar) .eyebrow,:lang(ar) .scan-title{letter-spacing:0;text-transform:none}
+:lang(ar) body,:lang(ar) .lead{line-height:1.8}
+:lang(ar) .logo{letter-spacing:0}
+input[type=email]{direction:ltr;text-align:start}
+
+/* arrows flip with direction */
+.arr::before{content:"→"}
+[dir=rtl] .arr::before{content:"←"}
+.arr.back::before{content:"←"}
+[dir=rtl] .arr.back::before{content:"→"}
+i.arr{font-style:normal}
 
 /* buttons */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:14px;font-weight:650;font-size:1rem;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s}
-.btn-primary{background:var(--ink);color:#fff;box-shadow:0 10px 24px -10px rgba(11,16,32,.6)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 30px -12px rgba(91,91,240,.7);background:#1a2250}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:14px;font-weight:650;font-size:1rem;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s;font-family:inherit;text-align:center}
+.btn-primary{background:var(--ink);color:#fff;box-shadow:0 10px 24px -10px rgba(7,20,31,.6)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 30px -12px rgba(10,143,139,.7);background:#0d2a3a}
 .btn-primary .arr{transition:transform .2s}.btn-primary:hover .arr{transform:translateX(4px)}
+[dir=rtl] .btn-primary:hover .arr{transform:translateX(-4px)}
 .btn-ghost{background:var(--surface);border-color:var(--line);color:var(--ink)}
 .btn-ghost:hover{border-color:var(--brand);color:var(--brand-ink)}
 .btn-light{background:#fff;color:var(--ink)}.btn-light:hover{transform:translateY(-2px)}
 .micro{font-size:.9rem;color:var(--ink-3)}
 
+/* brand */
+.logo{display:flex;align-items:center;gap:10px;font-weight:780;font-size:1.2rem;text-decoration:none;letter-spacing:-.02em;direction:ltr}
+.logo-mark{width:32px;height:32px;border-radius:10px;background:linear-gradient(135deg,var(--brand),var(--brand-2));position:relative;display:grid;place-items:center;flex:none}
+.logo-mark svg{width:20px;height:20px;fill:#fff}
+.logo-mark::after{content:"";position:absolute;top:-3px;right:-3px;width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 2px var(--bg)}
+.logo b{background:linear-gradient(100deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:780}
+
 /* nav */
-header{position:sticky;top:0;z-index:50;background:rgba(247,248,252,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .2s}
+header{position:sticky;top:0;z-index:50;background:rgba(245,249,250,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .2s}
 header.scrolled{border-color:var(--line)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
-.logo{display:flex;align-items:center;gap:10px;font-weight:750;font-size:1.15rem;text-decoration:none;letter-spacing:-.02em}
-.logo-mark{width:28px;height:28px;border-radius:9px;background:linear-gradient(135deg,var(--brand),var(--brand-2));position:relative}
-.logo-mark::after{content:"";position:absolute;inset:8px;border-radius:50%;background:#fff;opacity:.92}
-.nav ul{display:flex;gap:6px;list-style:none;padding:0}
-.nav ul a{display:block;padding:8px 14px;border-radius:10px;text-decoration:none;font-size:.95rem;color:var(--ink-2);transition:background .2s,color .2s}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px;gap:12px}
+.nav ul{display:flex;gap:4px;list-style:none;padding:0}
+.nav ul a{display:block;padding:8px 12px;border-radius:10px;text-decoration:none;font-size:.95rem;color:var(--ink-2);transition:background .2s,color .2s}
 .nav ul a:hover{background:var(--soft);color:var(--ink)}
+.nav-end{display:flex;align-items:center;gap:10px}
 .nav .btn{min-height:42px;padding:0 18px;font-size:.92rem}
+.lang{display:inline-flex;border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:3px;gap:2px}
+.lang button{border:0;background:none;font:inherit;font-size:.8rem;font-weight:700;color:var(--ink-2);padding:0 10px;min-height:34px;border-radius:9px;cursor:pointer;direction:ltr}
+.lang button:hover{color:var(--ink)}
+.lang button[aria-pressed="true"]{background:var(--ink);color:#fff}
 .menu-btn{display:none;width:46px;height:46px;border-radius:12px;border:1px solid var(--line);background:var(--surface);cursor:pointer}
 .menu-btn span{display:block;width:18px;height:2px;background:var(--ink);margin:4px auto;transition:transform .2s,opacity .2s}
 .menu-btn[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
@@ -84,8 +111,8 @@ header.scrolled{border-color:var(--line)}
 
 /* hero */
 .hero{padding-top:clamp(40px,6vw,80px);position:relative;overflow:hidden}
-.hero::before{content:"";position:absolute;inset:-20% -10% auto auto;width:700px;height:700px;background:radial-gradient(closest-side,rgba(91,91,240,.16),transparent);z-index:-1}
-.hero::after{content:"";position:absolute;inset:auto auto -30% -15%;width:600px;height:600px;background:radial-gradient(closest-side,rgba(34,184,207,.14),transparent);z-index:-1}
+.hero::before{content:"";position:absolute;inset:-20% -10% auto auto;width:700px;height:700px;background:radial-gradient(closest-side,rgba(10,143,139,.16),transparent);z-index:-1}
+.hero::after{content:"";position:absolute;inset:auto auto -30% -15%;width:600px;height:600px;background:radial-gradient(closest-side,rgba(47,125,246,.13),transparent);z-index:-1}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
 .hero h1{margin:20px 0 22px}
 .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin:32px 0 16px}
@@ -105,26 +132,28 @@ header.scrolled{border-color:var(--line)}
 .bar b{display:block;height:100%;width:0;border-radius:9px;background:linear-gradient(90deg,var(--brand),var(--brand-2));transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
 .scan.go .bar b{width:var(--w)}
 .tag{font-size:.72rem;font-weight:700;padding:4px 9px;border-radius:99px;background:#e7f8f1;color:#0b7a50;white-space:nowrap}
+.tag.alt{background:var(--soft);color:var(--brand-ink)}
 .scan-result{margin-top:16px;padding:18px;border-radius:16px;background:var(--dark);color:#fff}
-.scan-result p{font-size:.85rem;color:#aab3d6}
+.scan-result p{font-size:.85rem;color:#a9c0c8}
 .scan-result strong{display:block;font-size:1.25rem;margin:2px 0 12px}
 .scan-result a{color:#fff;font-weight:650;text-decoration:none;font-size:.95rem}
 .scan-result a:hover{text-decoration:underline}
-.journey{display:flex;gap:6px;flex-wrap:wrap;margin-top:18px;font-size:.78rem;color:var(--ink-3)}
+.journey{display:flex;gap:6px;flex-wrap:wrap;margin-top:18px;font-size:.78rem;color:var(--ink-3);align-items:center}
 .journey span{background:#fff;border:1px solid var(--line);padding:4px 10px;border-radius:99px}
 
 /* problem */
 .problem{background:var(--dark);color:#fff;border-radius:36px;margin:0 clamp(0px,1.5vw,20px)}
-.problem .eyebrow{background:rgba(255,255,255,.1);color:#c9d0ff}
-.problem .lead{color:#aab3d6}
+.problem .eyebrow{background:rgba(255,255,255,.1);color:#c4eeeb}
+.problem .lead{color:#a9c0c8}
 .pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:48px}
 .pain{padding:22px;border:1px solid rgba(255,255,255,.1);border-radius:var(--r-sm);background:rgba(255,255,255,.04);font-weight:500;display:flex;gap:12px;align-items:flex-start}
-.pain i{flex:none;width:8px;height:8px;border-radius:50%;background:var(--brand-2);margin-top:10px}
+.pain i{flex:none;width:8px;height:8px;border-radius:50%;background:var(--accent);margin-top:10px}
 .pull{margin-top:48px;font-size:clamp(1.25rem,2.4vw,1.8rem);line-height:1.35;font-weight:600;max-width:30ch;letter-spacing:-.02em}
-.pull span{color:#9aa4d6}
+:lang(ar) .pull{letter-spacing:0;line-height:1.6}
+.pull span{color:#8fb0b8}
 
 /* steps */
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:56px;position:relative;counter-reset:s}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:56px;position:relative;list-style:none;padding:0;text-align:start}
 .steps::before{content:"";position:absolute;top:34px;left:12%;right:12%;height:2px;background:repeating-linear-gradient(90deg,var(--brand) 0 8px,transparent 8px 16px);opacity:.35}
 .step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:26px;position:relative;box-shadow:var(--shadow)}
 .num{width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;font-weight:700;display:grid;place-items:center;margin-bottom:18px;position:relative;z-index:1}
@@ -136,8 +165,8 @@ header.scrolled{border-color:var(--line)}
 /* use cases */
 .cases{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:56px}
 .case{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:24px;transition:transform .25s,box-shadow .25s,border-color .25s;position:relative;overflow:hidden}
-.case::before{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(91,91,240,.08),transparent 55%);opacity:0;transition:opacity .25s}
-.case:hover{transform:translateY(-5px);border-color:#c9ccf8;box-shadow:var(--shadow)}
+.case::before{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(10,143,139,.09),transparent 55%);opacity:0;transition:opacity .25s}
+.case:hover{transform:translateY(-5px);border-color:#a9dcd9;box-shadow:var(--shadow)}
 .case:hover::before{opacity:1}
 .case>*{position:relative}
 .case .ico{width:46px;height:46px;border-radius:14px;background:var(--soft);color:var(--brand-ink);display:grid;place-items:center;margin-bottom:18px;transition:background .25s,color .25s}
@@ -145,31 +174,31 @@ header.scrolled{border-color:var(--line)}
 .case p{color:var(--ink-2);font-size:.94rem;margin-top:8px}
 
 /* imagine */
-.imagine{background:linear-gradient(180deg,var(--bg),#eceefb)}
+.imagine{background:linear-gradient(180deg,var(--bg),#e6f1f4)}
 .compare{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:56px}
 .flow{border-radius:24px;padding:28px;border:1px solid var(--line);background:var(--surface)}
-.flow.ai{background:var(--dark);color:#fff;border-color:transparent;box-shadow:0 24px 50px -20px rgba(91,91,240,.5)}
+.flow.ai{background:var(--dark);color:#fff;border-color:transparent;box-shadow:0 24px 50px -20px rgba(10,143,139,.55)}
 .flow h3{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:22px}
-.flow .pill{font-size:.74rem;font-weight:700;padding:4px 10px;border-radius:99px;background:#fdecec;color:#b42323}
-.flow.ai .pill{background:rgba(34,184,207,.18);color:#7fe3f2}
+.flow .pill{font-size:.74rem;font-weight:700;padding:4px 10px;border-radius:99px;background:#fdecec;color:#b42323;white-space:nowrap}
+.flow.ai .pill{background:rgba(34,184,207,.18);color:#8be9df}
 .flow ol{list-style:none;padding:0;display:grid;gap:0}
 .fstep{display:flex;gap:14px;align-items:center;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:#fff;font-size:.95rem;opacity:.15;transform:translateY(8px);transition:opacity .5s,transform .5s}
 .flow.ai .fstep{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12)}
 .fstep.on{opacity:1;transform:none}
 .fstep+.fstep{margin-top:22px;position:relative}
-.fstep+.fstep::before{content:"";position:absolute;left:28px;top:-22px;height:22px;width:2px;background:var(--line)}
+.fstep+.fstep::before{content:"";position:absolute;inset-inline-start:28px;top:-22px;height:22px;width:2px;background:var(--line)}
 .flow.ai .fstep+.fstep::before{background:rgba(255,255,255,.2)}
 .who{flex:none;font-size:.7rem;font-weight:700;letter-spacing:.04em;padding:3px 8px;border-radius:7px;min-width:62px;text-align:center}
-.who.h{background:#fdecec;color:#b42323}.who.a{background:rgba(91,91,240,.3);color:#cfd3ff}.who.r{background:#e7f8f1;color:#0b7a50}
+.who.h{background:#fdecec;color:#b42323}.who.a{background:rgba(10,143,139,.3);color:#bff0ec}.who.r{background:#e7f8f1;color:#0b7a50}
 .outcomes{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:36px;align-items:center;color:var(--ink-2);font-weight:600}
 .outcomes span.chip{background:#fff;border:1px solid var(--line);padding:8px 16px;border-radius:99px}
-.replay{margin:28px auto 0;display:block}
+.replay{margin:28px auto 0;display:flex}
 
 /* personalized */
 .pers-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
 .eval{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.eval div{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 16px 16px 18px;font-weight:600;font-size:.95rem;display:flex;gap:10px;align-items:center;transition:transform .2s,border-color .2s}
-.eval div:hover{transform:translateY(-3px);border-color:#c9ccf8}
+.eval div{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px;font-weight:600;font-size:.95rem;display:flex;gap:10px;align-items:center;transition:transform .2s,border-color .2s}
+.eval div:hover{transform:translateY(-3px);border-color:#a9dcd9}
 .eval svg{flex:none;color:var(--brand)}
 .pers-copy .btn{margin-top:28px}
 
@@ -183,7 +212,6 @@ header.scrolled{border-color:var(--line)}
 .get p{color:var(--ink-2);font-size:.95rem}
 .get ul{list-style:none;padding:0;margin-top:12px;display:grid;gap:6px;font-size:.9rem;color:var(--ink-2)}
 .get li::before{content:"✓ ";color:var(--ok);font-weight:700}
-.note{margin-top:28px;text-align:center;color:var(--ink-2)}
 
 /* audience */
 .aud{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:44px}
@@ -192,7 +220,7 @@ header.scrolled{border-color:var(--line)}
 
 /* principles */
 .princ{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:56px;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--surface)}
-.pr{padding:30px 26px;border-right:1px solid var(--line)}
+.pr{padding:30px 26px;border-inline-end:1px solid var(--line)}
 .pr:last-child{border:0}
 .pr b{font-size:2.4rem;font-weight:300;color:transparent;-webkit-text-stroke:1.2px var(--brand);display:block;line-height:1;margin-bottom:18px}
 .pr p{color:var(--ink-2);margin-top:8px;font-size:.95rem}
@@ -200,7 +228,7 @@ header.scrolled{border-color:var(--line)}
 /* faq */
 .faq{max-width:780px;margin:48px auto 0;display:grid;gap:10px}
 details{background:var(--surface);border:1px solid var(--line);border-radius:16px;transition:border-color .2s}
-details[open]{border-color:#c9ccf8}
+details[open]{border-color:#a9dcd9}
 summary{list-style:none;cursor:pointer;padding:20px 22px;font-weight:650;display:flex;justify-content:space-between;gap:16px;align-items:center;border-radius:16px}
 summary::-webkit-details-marker{display:none}
 summary::after{content:"+";font-size:1.5rem;font-weight:400;color:var(--brand);transition:transform .25s;flex:none}
@@ -209,30 +237,92 @@ details p{padding:0 22px 22px;color:var(--ink-2)}
 
 /* final */
 .final{background:var(--dark);color:#fff;border-radius:36px;margin:0 clamp(0px,1.5vw,20px);text-align:center;position:relative;overflow:hidden}
-.final::before{content:"";position:absolute;inset:-40% 20% auto;height:420px;background:radial-gradient(closest-side,rgba(91,91,240,.5),transparent);pointer-events:none}
+.final::before{content:"";position:absolute;inset:-40% 20% auto;height:420px;background:radial-gradient(closest-side,rgba(10,143,139,.5),transparent);pointer-events:none}
 .final>*{position:relative}
 .final h2{max-width:20ch;margin-inline:auto}
-.final .lead{color:#aab3d6;margin:20px auto 36px}
-.final .micro{color:#8791bd;margin-top:18px}
+.final .lead{color:#a9c0c8;margin:20px auto 36px}
+.final .micro{color:#7f9ca6;margin-top:18px}
 
 footer{padding:48px 0;color:var(--ink-3);font-size:.9rem}
 .foot{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center}
 .foot nav{display:flex;gap:18px;flex-wrap:wrap}
-.foot a{text-decoration:none}.foot a:hover{color:var(--ink)}
+.foot nav a{text-decoration:none}.foot nav a:hover{color:var(--ink)}
 
 /* reveal */
 .rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
 .rv.in{opacity:1;transform:none}
 .no-js .rv{opacity:1;transform:none}
-
-/* sticky mobile cta */
 .mcta{display:none}
+
+/* ===== AI DISCOVERY (in-page experience) ===== */
+.disc{position:fixed;inset:0;z-index:200;background:var(--bg);display:flex;flex-direction:column;overflow:hidden;animation:dIn .35s ease}
+.disc[hidden]{display:none}
+@keyframes dIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.disc::before{content:"";position:absolute;inset:-10% -10% auto auto;width:640px;height:640px;background:radial-gradient(closest-side,rgba(10,143,139,.13),transparent);pointer-events:none}
+.d-top{display:flex;align-items:center;justify-content:space-between;gap:12px;height:68px;padding:0 max(20px,calc((100% - 1160px)/2));flex:none;position:relative}
+.d-close{min-height:42px;padding:0 16px;border-radius:12px;border:1px solid var(--line);background:var(--surface);font:inherit;font-weight:600;cursor:pointer;color:var(--ink-2)}
+.d-close:hover{border-color:var(--brand);color:var(--brand-ink)}
+.d-prog{flex:none;padding:0 max(20px,calc((100% - 760px)/2))}
+.d-prog[hidden]{display:none}
+.d-prog-meta{display:flex;justify-content:space-between;font-size:.85rem;color:var(--ink-3);margin-bottom:8px;font-weight:600}
+.d-track{height:6px;border-radius:9px;background:#dfeceb;overflow:hidden}
+.d-track b{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--brand),var(--brand-2));border-radius:9px;transition:width .45s cubic-bezier(.2,.8,.2,1)}
+.d-scroll{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;position:relative}
+.d-inner{width:min(760px,100% - 40px);margin:0 auto;padding:clamp(28px,5vw,56px) 0 120px}
+.d-inner h2{font-size:clamp(1.6rem,3.6vw,2.4rem);margin:0 0 10px;outline:none}
+.d-sub{color:var(--ink-2);margin-bottom:28px}
+fieldset{border:0;padding:0;min-width:0}
+.d-opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.opt{position:relative;display:block}
+.opt input{position:absolute;opacity:0;inset:0;width:100%;height:100%;cursor:pointer;margin:0}
+.opt span{display:flex;gap:12px;align-items:center;min-height:60px;padding:14px 16px;border:1.5px solid var(--line);border-radius:14px;background:var(--surface);font-weight:550;transition:border-color .15s,background .15s,transform .15s}
+.opt span::before{content:"";flex:none;width:20px;height:20px;border:2px solid #b5cfcd;border-radius:6px;background:#fff;transition:all .15s}
+.opt.radio span::before{border-radius:50%}
+.opt:hover span{border-color:#8fd0cc;transform:translateY(-1px)}
+.opt input:checked+span{border-color:var(--brand);background:var(--soft)}
+.opt input:checked+span::before{background:var(--brand) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 12 5 5 9-10'/%3E%3C/svg%3E") center/14px no-repeat;border-color:var(--brand)}
+.opt input:focus-visible+span{outline:3px solid var(--brand);outline-offset:2px}
+.d-field{display:block;width:100%;font:inherit;padding:14px 16px;border:1.5px solid var(--line);border-radius:14px;background:var(--surface);color:var(--ink)}
+textarea.d-field{min-height:130px;resize:vertical}
+.d-field:focus{outline:3px solid rgba(10,143,139,.35);border-color:var(--brand)}
+.d-hint{font-size:.88rem;color:var(--ink-3);margin-top:12px}
+.d-hint a{color:var(--brand-ink);font-weight:600}
+.d-err{color:#b42323;font-weight:600;font-size:.92rem;min-height:1.4em;margin-top:14px}
+.d-nav{position:sticky;bottom:0;background:linear-gradient(180deg,transparent,var(--bg) 35%);padding:28px 0 20px;margin-top:8px;display:flex;justify-content:space-between;gap:12px}
+.d-nav .btn{min-width:130px}
+.d-think{text-align:center;padding:80px 0}
+.d-orb{width:72px;height:72px;margin:0 auto 28px;border-radius:50%;background:conic-gradient(from 0deg,var(--brand),var(--brand-2),var(--brand));-webkit-mask:radial-gradient(circle 26px,transparent 98%,#000);mask:radial-gradient(circle 26px,transparent 98%,#000);animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.res-head .eyebrow{margin-bottom:14px}
+.res-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:24px;margin-top:16px;box-shadow:var(--shadow)}
+.res-card h3{margin-bottom:6px}
+.res-card>p{color:var(--ink-2);font-size:.96rem}
+.o-item{padding:18px 0;border-top:1px solid var(--line)}
+.o-item:first-of-type{border-top:0;padding-top:12px}
+.o-row{display:flex;justify-content:space-between;gap:12px;align-items:center}
+.o-rank{font-size:.75rem;font-weight:700;color:var(--brand-ink);background:var(--soft);padding:3px 9px;border-radius:99px;white-space:nowrap}
+.o-item .bar{margin:10px 0 8px}
+.o-item p{color:var(--ink-2);font-size:.94rem}
+.o-fit{font-size:.78rem;color:var(--ink-3);margin-top:6px}
+.sol{background:var(--dark);color:#fff;border-color:transparent}
+.sol>p,.sol li{color:#bdd3d9}
+.sol .big{font-size:1.6rem;font-weight:720;letter-spacing:-.02em;margin:4px 0 10px;background:linear-gradient(100deg,#8be9df,#9cc4ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+:lang(ar) .sol .big{letter-spacing:0}
+.res-card ul,.res-card ol{padding-inline-start:20px;margin-top:10px;display:grid;gap:8px;color:var(--ink-2);font-size:.95rem}
+.contact{border:1.5px solid var(--brand)}
+.c-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.c-grid .full{grid-column:1/-1}
+.c-grid label{display:block;font-size:.85rem;font-weight:650;margin-bottom:6px}
+.c-grid .opt-lbl{font-weight:500;color:var(--ink-3)}
+.d-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px;align-items:center}
+.linkbtn{background:none;border:0;font:inherit;color:var(--brand-ink);font-weight:650;cursor:pointer;text-decoration:underline;padding:8px 4px}
+.thanks{text-align:center;padding:12px 0}
 
 @media (max-width:1020px){
   .cases{grid-template-columns:repeat(2,1fr)}
   .steps{grid-template-columns:repeat(2,1fr)}.steps::before{display:none}
   .princ{grid-template-columns:repeat(2,1fr)}
-  .pr:nth-child(2){border-right:0}.pr:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .pr:nth-child(2){border-inline-end:0}.pr:nth-child(-n+2){border-bottom:1px solid var(--line)}
   .get-grid{grid-template-columns:repeat(2,1fr)}.get,.get:nth-child(1),.get:nth-child(2){grid-column:span 1}.get:nth-child(5){grid-column:span 2}
 }
 @media (max-width:860px){
@@ -251,113 +341,54 @@ footer{padding:48px 0;color:var(--ink-3);font-size:.9rem}
   .wrap{width:calc(100% - 32px)}
   .cta-row .btn{width:100%}
   .problem,.final{border-radius:26px;margin:0 8px}
-  /* horizontally scrollable use-case cards */
   .cases{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin-inline:-16px;padding:4px 16px 16px;scrollbar-width:none}
   .cases::-webkit-scrollbar{display:none}
   .case{flex:0 0 78%;scroll-snap-align:center}
   .steps,.get-grid,.eval{grid-template-columns:1fr}
   .get:nth-child(5){grid-column:span 1}
-  .princ{grid-template-columns:1fr}.pr{border-right:0;border-bottom:1px solid var(--line)}.pr:last-child{border:0}
+  .princ{grid-template-columns:1fr}.pr{border-inline-end:0;border-bottom:1px solid var(--line)}.pr:last-child{border:0}
   .flow{padding:20px}.fstep{font-size:.9rem}.who{min-width:54px}
   .mcta{display:block;position:fixed;left:12px;right:12px;bottom:12px;z-index:40;transform:translateY(120%);transition:transform .3s}
   .mcta.show{transform:none}
-  .mcta .btn{width:100%;box-shadow:0 14px 30px -8px rgba(11,16,32,.5)}
+  .mcta .btn{width:100%;box-shadow:0 14px 30px -8px rgba(7,20,31,.5)}
   footer{padding-bottom:96px}
+  .nav-end{gap:8px}
+  .lang button{padding:0 8px}
+  .d-opts,.c-grid{grid-template-columns:1fr}
+  .d-nav .btn{flex:1}.d-nav .btn-ghost{flex:0 0 auto;min-width:96px}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
   .rv,.fstep{opacity:1;transform:none}
   .bar b{width:var(--w)}
 }
-
-/* ===== AI DISCOVERY (in-page experience) ===== */
-.disc{position:fixed;inset:0;z-index:200;background:var(--bg);display:flex;flex-direction:column;overflow:hidden;animation:dIn .35s ease}
-.disc[hidden]{display:none}
-@keyframes dIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-.disc::before{content:"";position:absolute;inset:-10% -10% auto auto;width:640px;height:640px;background:radial-gradient(closest-side,rgba(91,91,240,.13),transparent);pointer-events:none}
-.d-top{display:flex;align-items:center;justify-content:space-between;gap:16px;height:68px;padding:0 max(20px,calc((100% - 1160px)/2));flex:none;position:relative}
-.d-close{min-height:42px;padding:0 16px;border-radius:12px;border:1px solid var(--line);background:var(--surface);font:inherit;font-weight:600;cursor:pointer;color:var(--ink-2)}
-.d-close:hover{border-color:var(--brand);color:var(--brand-ink)}
-.d-prog{flex:none;padding:0 max(20px,calc((100% - 760px)/2))}
-.d-prog-meta{display:flex;justify-content:space-between;font-size:.85rem;color:var(--ink-3);margin-bottom:8px;font-weight:600}
-.d-track{height:6px;border-radius:9px;background:#e3e6f5;overflow:hidden}
-.d-track b{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--brand),var(--brand-2));border-radius:9px;transition:width .45s cubic-bezier(.2,.8,.2,1)}
-.d-scroll{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;position:relative}
-.d-inner{width:min(760px,100% - 40px);margin:0 auto;padding:clamp(28px,5vw,56px) 0 120px}
-.d-inner h2{font-size:clamp(1.6rem,3.6vw,2.4rem);margin:0 0 10px;outline:none}
-.d-sub{color:var(--ink-2);margin-bottom:28px}
-fieldset{border:0;padding:0;min-width:0}
-.d-opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.opt{position:relative;display:block}
-.opt input{position:absolute;opacity:0;inset:0;width:100%;height:100%;cursor:pointer;margin:0}
-.opt span{display:flex;gap:12px;align-items:center;min-height:60px;padding:14px 16px;border:1.5px solid var(--line);border-radius:14px;background:var(--surface);font-weight:550;transition:border-color .15s,background .15s,transform .15s}
-.opt span::before{content:"";flex:none;width:20px;height:20px;border:2px solid #c3c8e2;border-radius:6px;background:#fff;transition:all .15s}
-.opt.radio span::before{border-radius:50%}
-.opt:hover span{border-color:#b7bbf5;transform:translateY(-1px)}
-.opt input:checked+span{border-color:var(--brand);background:var(--soft)}
-.opt input:checked+span::before{background:var(--brand) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 12 5 5 9-10'/%3E%3C/svg%3E") center/14px no-repeat;border-color:var(--brand)}
-.opt input:focus-visible+span{outline:3px solid var(--brand);outline-offset:2px}
-.d-field{display:block;width:100%;font:inherit;padding:14px 16px;border:1.5px solid var(--line);border-radius:14px;background:var(--surface);color:var(--ink)}
-textarea.d-field{min-height:130px;resize:vertical}
-.d-field:focus{outline:3px solid rgba(91,91,240,.35);border-color:var(--brand)}
-.d-hint{font-size:.88rem;color:var(--ink-3);margin-top:12px}
-.d-err{color:#b42323;font-weight:600;font-size:.92rem;min-height:1.4em;margin-top:14px}
-.d-nav{position:sticky;bottom:0;background:linear-gradient(180deg,transparent,var(--bg) 35%);padding:28px 0 20px;margin-top:8px;display:flex;justify-content:space-between;gap:12px}
-.d-nav .btn{min-width:130px}
-.d-nav .spacer{flex:1}
-@media(max-width:640px){.d-opts{grid-template-columns:1fr}.d-nav .btn{flex:1}.d-nav .btn-ghost{flex:0 0 auto;min-width:96px}}
-
-/* analyzing */
-.d-think{text-align:center;padding:80px 0}
-.d-orb{width:72px;height:72px;margin:0 auto 28px;border-radius:50%;background:conic-gradient(from 0deg,var(--brand),var(--brand-2),var(--brand));-webkit-mask:radial-gradient(circle 26px,transparent 98%,#000);mask:radial-gradient(circle 26px,transparent 98%,#000);animation:spin 1s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-
-/* results */
-.res-head .eyebrow{margin-bottom:14px}
-.res-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:24px;margin-top:16px;box-shadow:var(--shadow)}
-.res-card h3{margin-bottom:6px}
-.res-card>p{color:var(--ink-2);font-size:.96rem}
-.o-item{padding:18px 0;border-top:1px solid var(--line)}
-.o-item:first-of-type{border-top:0;padding-top:12px}
-.o-row{display:flex;justify-content:space-between;gap:12px;align-items:center}
-.o-rank{font-size:.75rem;font-weight:700;color:var(--brand-ink);background:var(--soft);padding:3px 9px;border-radius:99px;white-space:nowrap}
-.o-item .bar{margin:10px 0 8px}
-.o-item p{color:var(--ink-2);font-size:.94rem}
-.o-fit{font-size:.78rem;color:var(--ink-3);margin-top:6px}
-.sol{background:var(--dark);color:#fff;border-color:transparent}
-.sol>p,.sol li{color:#c3cae8}
-.sol .big{font-size:1.6rem;font-weight:720;letter-spacing:-.02em;margin:4px 0 10px;background:linear-gradient(100deg,#b9b9ff,#7fe3f2);-webkit-background-clip:text;background-clip:text;color:transparent}
-.res-card ul,.res-card ol{padding-left:20px;margin-top:10px;display:grid;gap:8px;color:var(--ink-2);font-size:.95rem}
-.sol small{display:block;margin-top:14px;color:#8791bd}
-.contact{border:1.5px solid var(--brand)}
-.c-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
-.c-grid .full{grid-column:1/-1}
-.c-grid label{display:block;font-size:.85rem;font-weight:650;margin-bottom:6px}
-.c-grid .opt-lbl{font-weight:500;color:var(--ink-3)}
-@media(max-width:640px){.c-grid{grid-template-columns:1fr}}
-.d-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px;align-items:center}
-.linkbtn{background:none;border:0;font:inherit;color:var(--brand-ink);font-weight:650;cursor:pointer;text-decoration:underline;padding:8px 4px}
-.thanks{text-align:center;padding:12px 0}
 </style>
 </head>
 <body class="no-js">
-<a href="#main" style="position:absolute;left:-999px;top:8px;background:#fff;padding:10px 14px;border-radius:8px;z-index:100" onfocus="this.style.left='8px'" onblur="this.style.left='-999px'">Skip to content</a>
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
 
 <header id="top">
   <div class="wrap nav">
-    <a class="logo" href="#top" aria-label="Lumina AI home"><span class="logo-mark" aria-hidden="true"></span>Lumina AI</a>
-    <nav aria-label="Main">
+    <a class="logo" href="#top" data-i18n-attr="aria-label:logo.aria" aria-label="Dalil AI home"><span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg></span><span>Dalil <b>AI</b></span></a>
+    <nav aria-label="Main" data-i18n-attr="aria-label:nav.aria">
       <ul id="menu">
-        <li><a href="#solutions">AI Solutions</a></li>
-        <li><a href="#how">How It Works</a></li>
-        <li><a href="#use-cases">Use Cases</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li class="nav-cta-mobile"><a class="btn btn-primary" href="#discovery">Start AI Discovery</a></li>
+        <li><a href="#solutions" data-i18n="nav.solutions">AI Solutions</a></li>
+        <li><a href="#how" data-i18n="nav.how">How It Works</a></li>
+        <li><a href="#use-cases" data-i18n="nav.cases">Use Cases</a></li>
+        <li><a href="#about" data-i18n="nav.about">About</a></li>
+        <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+        <li class="nav-cta-mobile"><a class="btn btn-primary" href="#discovery" data-i18n="nav.cta">Start AI Discovery</a></li>
       </ul>
     </nav>
-    <a class="btn btn-primary desk" href="#discovery">Start AI Discovery</a>
-    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <div class="nav-end">
+      <div class="lang" role="group" aria-label="Language" data-i18n-attr="aria-label:lang.aria">
+        <button type="button" data-lang="en" lang="en" aria-label="English" aria-pressed="true">EN</button>
+        <button type="button" data-lang="fr" lang="fr" aria-label="Français" aria-pressed="false">FR</button>
+        <button type="button" data-lang="ar" lang="ar" aria-label="العربية" aria-pressed="false">AR</button>
+      </div>
+      <a class="btn btn-primary desk" href="#discovery" data-i18n="nav.cta">Start AI Discovery</a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
   </div>
 </header>
 
@@ -367,26 +398,26 @@ textarea.d-field{min-height:130px;resize:vertical}
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow">AI consulting &amp; automation</span>
-      <h1>Discover Where AI Can <span class="grad">Actually Make a Difference</span> in Your Business.</h1>
-      <p class="lead">Tell us how your business works. We'll identify where AI, automation, and intelligent agents can save time, reduce costs, and create new opportunities.</p>
+      <span class="eyebrow" data-i18n="hero.eyebrow">AI consulting &amp; automation</span>
+      <h1 data-i18n-html="hero.h1">Discover Where AI Can <span class="grad">Actually Make a Difference</span> in Your Business.</h1>
+      <p class="lead" data-i18n="hero.lead">Tell us how your business works. We'll identify where AI, automation, and intelligent agents can save time, reduce costs, and create new opportunities.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="#discovery">Start Your AI Discovery <span class="arr" aria-hidden="true">→</span></a>
-        <a class="btn btn-ghost" href="#how">See How It Works</a>
+        <a class="btn btn-primary" href="#discovery"><span data-i18n="cta.primary">Start Your AI Discovery</span> <span class="arr" aria-hidden="true"></span></a>
+        <a class="btn btn-ghost" href="#how" data-i18n="hero.secondary">See How It Works</a>
       </div>
-      <p class="micro">5–10 minutes · No technical knowledge required · Personalized recommendations</p>
-      <div class="journey" aria-label="The discovery journey">
-        <span>Your business</span><span>→</span><span>Challenges</span><span>→</span><span>Workflows</span><span>→</span><span>AI opportunities</span><span>→</span><span>Your AI plan</span>
+      <p class="micro" data-i18n="hero.micro">5–10 minutes · No technical knowledge required · Personalized recommendations</p>
+      <div class="journey" role="group" data-i18n-attr="aria-label:journey.aria" aria-label="The discovery journey">
+        <span data-i18n="j1">Your business</span><i class="arr" aria-hidden="true"></i><span data-i18n="j2">Challenges</span><i class="arr" aria-hidden="true"></i><span data-i18n="j3">Workflows</span><i class="arr" aria-hidden="true"></i><span data-i18n="j4">AI opportunities</span><i class="arr" aria-hidden="true"></i><span data-i18n="j5">Your AI plan</span>
       </div>
     </div>
 
-    <div class="scan" id="scan" role="img" aria-label="Example AI Opportunity Scan showing customer support, workflow automation, lead qualification and data analysis, with three high-impact opportunities found. Illustrative example only.">
-      <div class="scan-top"><span class="scan-title">AI OPPORTUNITY SCAN</span><span class="live"><i></i>Example</span></div>
-      <div class="opp"><div class="opp-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-6.4A8 8 0 1 1 21 12Z"/></svg></div><div class="opp-body"><div class="opp-name">Customer Support</div><div class="bar"><b style="--w:86%"></b></div></div><span class="tag">High impact</span></div>
-      <div class="opp"><div class="opp-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 6h4a4 4 0 0 1 4 4v5"/></svg></div><div class="opp-body"><div class="opp-name">Workflow Automation</div><div class="bar"><b style="--w:78%"></b></div></div><span class="tag">High impact</span></div>
-      <div class="opp"><div class="opp-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18l-7 8v6l-4 2v-8L3 4Z"/></svg></div><div class="opp-body"><div class="opp-name">Lead Qualification</div><div class="bar"><b style="--w:64%"></b></div></div><span class="tag">High impact</span></div>
-      <div class="opp"><div class="opp-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div><div class="opp-body"><div class="opp-name">Data Analysis</div><div class="bar"><b style="--w:42%"></b></div></div><span class="tag" style="background:var(--soft);color:var(--brand-ink)">Worth exploring</span></div>
-      <div class="scan-result"><p>Scan complete</p><strong>3 High-Impact Opportunities</strong><a href="#discovery">View Your AI Opportunities →</a></div>
+    <div class="scan" id="scan" role="img" data-i18n-attr="aria-label:scan.aria" aria-label="Example AI Opportunity Scan.">
+      <div class="scan-top"><span class="scan-title" data-i18n="scan.title">AI OPPORTUNITY SCAN</span><span class="live"><i></i><span data-i18n="scan.example">Example</span></span></div>
+      <div class="opp"><div class="opp-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-6.4A8 8 0 1 1 21 12Z"/></svg></div><div class="opp-body"><div class="opp-name" data-i18n="oppn.support">Customer Support</div><div class="bar"><b style="--w:86%"></b></div></div><span class="tag" data-i18n="tag.high">High impact</span></div>
+      <div class="opp"><div class="opp-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 6h4a4 4 0 0 1 4 4v5"/></svg></div><div class="opp-body"><div class="opp-name" data-i18n="oppn.ops">Workflow Automation</div><div class="bar"><b style="--w:78%"></b></div></div><span class="tag" data-i18n="tag.high">High impact</span></div>
+      <div class="opp"><div class="opp-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18l-7 8v6l-4 2v-8L3 4Z"/></svg></div><div class="opp-body"><div class="opp-name" data-i18n="oppn.sales">Lead Qualification &amp; Sales</div><div class="bar"><b style="--w:64%"></b></div></div><span class="tag" data-i18n="tag.high">High impact</span></div>
+      <div class="opp"><div class="opp-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div><div class="opp-body"><div class="opp-name" data-i18n="oppn.data">Data &amp; Analytics</div><div class="bar"><b style="--w:42%"></b></div></div><span class="tag alt" data-i18n="tag.explore">Worth exploring</span></div>
+      <div class="scan-result"><p data-i18n="scan.complete">Scan complete</p><strong data-i18n="scan.three">3 High-Impact Opportunities</strong><a href="#discovery"><span data-i18n="scan.view">View Your AI Opportunities</span> <span class="arr" aria-hidden="true"></span></a></div>
     </div>
   </div>
 </section>
@@ -394,35 +425,35 @@ textarea.d-field{min-height:130px;resize:vertical}
 <!-- PROBLEM -->
 <section class="problem" id="solutions" aria-labelledby="problem-h">
   <div class="wrap">
-    <span class="eyebrow">The real challenge</span>
-    <h2 id="problem-h" style="max-width:20ch">You don't need more AI tools. You need the right AI opportunities.</h2>
-    <p class="lead" style="margin-top:20px">New tools launch every week. It's hard to know which ones matter for your business, and harder still to know where to begin.</p>
+    <span class="eyebrow" data-i18n="p.eyebrow">The real challenge</span>
+    <h2 id="problem-h" style="max-width:20ch" data-i18n="p.h2">You don't need more AI tools. You need the right AI opportunities.</h2>
+    <p class="lead" style="margin-top:20px" data-i18n="p.lead">New tools launch every week. It's hard to know which ones matter for your business, and harder still to know where to begin.</p>
     <div class="pain-grid">
-      <div class="pain rv"><i></i>Too many AI tools and possibilities</div>
-      <div class="pain rv"><i></i>Unclear return on investment</div>
-      <div class="pain rv"><i></i>Repetitive manual work eating the day</div>
-      <div class="pain rv"><i></i>Disconnected software that doesn't talk</div>
-      <div class="pain rv"><i></i>Information that's difficult to find</div>
-      <div class="pain rv"><i></i>Employees manually moving data between systems</div>
-      <div class="pain rv" style="grid-column:1/-1"><i></i>Uncertainty about where to start</div>
+      <div class="pain rv"><i></i><span data-i18n="pain1">Too many AI tools and possibilities</span></div>
+      <div class="pain rv"><i></i><span data-i18n="pain2">Unclear return on investment</span></div>
+      <div class="pain rv"><i></i><span data-i18n="pain3">Repetitive manual work eating the day</span></div>
+      <div class="pain rv"><i></i><span data-i18n="pain4">Disconnected software that doesn't talk</span></div>
+      <div class="pain rv"><i></i><span data-i18n="pain5">Information that's difficult to find</span></div>
+      <div class="pain rv"><i></i><span data-i18n="pain6">Employees manually moving data between systems</span></div>
+      <div class="pain rv" style="grid-column:1/-1"><i></i><span data-i18n="pain7">Uncertainty about where to start</span></div>
     </div>
-    <p class="pull rv">The first step isn't choosing an AI tool. <span>It's understanding where AI can create the most value.</span></p>
+    <p class="pull rv" data-i18n-html="p.pull">The first step isn't choosing an AI tool. <span>It's understanding where AI can create the most value.</span></p>
   </div>
 </section>
 
 <!-- HOW -->
 <section id="how" aria-labelledby="how-h">
   <div class="wrap center">
-    <span class="eyebrow">How it works</span>
-    <h2 id="how-h">From “where do I start?” to a clear plan.</h2>
-    <p class="lead" style="margin-top:16px">Four steps. You answer simple questions about your business; we do the thinking.</p>
-    <ol class="steps" style="list-style:none;padding:0;text-align:left">
-      <li class="step rv"><div class="num">01</div><h3>Understand</h3><p>We learn about your business, workflows, challenges, tools, and goals.</p></li>
-      <li class="step rv"><div class="num">02</div><h3>Identify</h3><p>We find the areas where AI and automation could create meaningful impact.</p></li>
-      <li class="step rv"><div class="num">03</div><h3>Recommend</h3><p>We point to the most suitable direction:</p><ul><li>AI Assistant</li><li>AI Automation</li><li>AI Agent</li><li>AI Integration</li><li>Custom AI Application</li></ul></li>
-      <li class="step rv"><div class="num">04</div><h3>Build</h3><p>We turn the opportunity into a practical solution your team can use.</p></li>
+    <span class="eyebrow" data-i18n="how.eyebrow">How it works</span>
+    <h2 id="how-h" data-i18n="how.h2">From “where do I start?” to a clear plan.</h2>
+    <p class="lead" style="margin-top:16px" data-i18n="how.lead">Four steps. You answer simple questions about your business; we do the thinking.</p>
+    <ol class="steps">
+      <li class="step rv"><div class="num">01</div><h3 data-i18n="s1t">Understand</h3><p data-i18n="s1d">We learn about your business, workflows, challenges, tools, and goals.</p></li>
+      <li class="step rv"><div class="num">02</div><h3 data-i18n="s2t">Identify</h3><p data-i18n="s2d">We find the areas where AI and automation could create meaningful impact.</p></li>
+      <li class="step rv"><div class="num">03</div><h3 data-i18n="s3t">Recommend</h3><p data-i18n="s3d">We point to the most suitable direction:</p><ul><li data-i18n="soln.assistant">AI Assistant</li><li data-i18n="soln.automation">AI Automation</li><li data-i18n="soln.agent">AI Agent</li><li data-i18n="soln.integration">AI Integration</li><li data-i18n="soln.custom">Custom AI Application</li></ul></li>
+      <li class="step rv"><div class="num">04</div><h3 data-i18n="s4t">Build</h3><p data-i18n="s4d">We turn the opportunity into a practical solution your team can use.</p></li>
     </ol>
-    <div class="center-cta"><a class="btn btn-primary" href="#discovery">Discover My AI Opportunities <span class="arr" aria-hidden="true">→</span></a></div>
+    <div class="center-cta"><a class="btn btn-primary" href="#discovery"><span data-i18n="cta.discover">Discover My AI Opportunities</span> <span class="arr" aria-hidden="true"></span></a></div>
   </div>
 </section>
 
@@ -430,19 +461,19 @@ textarea.d-field{min-height:130px;resize:vertical}
 <section id="use-cases" aria-labelledby="uc-h" style="padding-top:0">
   <div class="wrap">
     <div class="center">
-      <span class="eyebrow">Use cases</span>
-      <h2 id="uc-h">What Can AI Do For Your Business?</h2>
-      <p class="lead" style="margin-top:16px">Practical ways teams are putting AI to work, in plain language.</p>
+      <span class="eyebrow" data-i18n="uc.eyebrow">Use cases</span>
+      <h2 id="uc-h" data-i18n="uc.h2">What Can AI Do For Your Business?</h2>
+      <p class="lead" style="margin-top:16px" data-i18n="uc.lead">Practical ways teams are putting AI to work, in plain language.</p>
     </div>
     <div class="cases">
-      <article class="case rv"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-6.4A8 8 0 1 1 21 12Z"/></svg></div><h3>Customer Support</h3><p>Answer questions, search company knowledge, assist customers, and escalate complex requests.</p></article>
-      <article class="case rv"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18l-7 8v6l-4 2v-8L3 4Z"/></svg></div><h3>Sales</h3><p>Qualify leads, automate follow-ups, and help sales teams prioritize opportunities.</p></article>
-      <article class="case rv"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-7v16L3 13v-2Z"/><path d="M7 13v5a2 2 0 0 0 4 0v-3"/></svg></div><h3>Marketing</h3><p>Generate content, analyze campaigns, and automate repetitive marketing tasks.</p></article>
-      <article class="case rv"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 6h4a4 4 0 0 1 4 4v5"/></svg></div><h3>Operations</h3><p>Automate repetitive workflows and connect your business systems.</p></article>
-      <article class="case rv"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div><h3>Data &amp; Analytics</h3><p>Analyze business data and turn information into useful insights.</p></article>
-      <article class="case rv"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2V5Z"/><path d="M8 7h6M8 11h6"/></svg></div><h3>Internal Knowledge</h3><p>Help employees quickly find information across company documents and systems.</p></article>
-      <article class="case rv"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 8V4M9 13h.01M15 13h.01M9 17h6"/></svg></div><h3>AI Agents</h3><p>Let AI perform multi-step tasks and interact with business systems, with your team in control.</p></article>
-      <article class="case rv"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 8-5 4 5 4M16 8l5 4-5 4M14 5l-4 14"/></svg></div><h3>Custom AI</h3><p>Build AI solutions around your unique business requirements.</p></article>
+      <article class="case rv"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-6.4A8 8 0 1 1 21 12Z"/></svg></div><h3 data-i18n="uc1t">Customer Support</h3><p data-i18n="uc1d">Answer questions, search company knowledge, assist customers, and escalate complex requests.</p></article>
+      <article class="case rv"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18l-7 8v6l-4 2v-8L3 4Z"/></svg></div><h3 data-i18n="uc2t">Sales</h3><p data-i18n="uc2d">Qualify leads, automate follow-ups, and help sales teams prioritize opportunities.</p></article>
+      <article class="case rv"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-7v16L3 13v-2Z"/><path d="M7 13v5a2 2 0 0 0 4 0v-3"/></svg></div><h3 data-i18n="uc3t">Marketing</h3><p data-i18n="uc3d">Generate content, analyze campaigns, and automate repetitive marketing tasks.</p></article>
+      <article class="case rv"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 6h4a4 4 0 0 1 4 4v5"/></svg></div><h3 data-i18n="uc4t">Operations</h3><p data-i18n="uc4d">Automate repetitive workflows and connect your business systems.</p></article>
+      <article class="case rv"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div><h3 data-i18n="uc5t">Data &amp; Analytics</h3><p data-i18n="uc5d">Analyze business data and turn information into useful insights.</p></article>
+      <article class="case rv"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2V5Z"/><path d="M8 7h6M8 11h6"/></svg></div><h3 data-i18n="uc6t">Internal Knowledge</h3><p data-i18n="uc6d">Help employees quickly find information across company documents and systems.</p></article>
+      <article class="case rv"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 8V4M9 13h.01M15 13h.01M9 17h6"/></svg></div><h3 data-i18n="uc7t">AI Agents</h3><p data-i18n="uc7d">Let AI perform multi-step tasks and interact with business systems, with your team in control.</p></article>
+      <article class="case rv"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 8-5 4 5 4M16 8l5 4-5 4M14 5l-4 14"/></svg></div><h3 data-i18n="uc8t">Custom AI</h3><p data-i18n="uc8d">Build AI solutions around your unique business requirements.</p></article>
     </div>
   </div>
 </section>
@@ -451,37 +482,37 @@ textarea.d-field{min-height:130px;resize:vertical}
 <section class="imagine" aria-labelledby="im-h">
   <div class="wrap">
     <div class="center">
-      <span class="eyebrow">Imagine this</span>
-      <h2 id="im-h">Same request. Far fewer manual steps.</h2>
-      <p class="lead" style="margin-top:16px">See what happens to a single customer question when repetitive work is handed to AI.</p>
+      <span class="eyebrow" data-i18n="im.eyebrow">Imagine this</span>
+      <h2 id="im-h" data-i18n="im.h2">Same request. Far fewer manual steps.</h2>
+      <p class="lead" style="margin-top:16px" data-i18n="im.lead">See what happens to a single customer question when repetitive work is handed to AI.</p>
     </div>
     <div class="compare" id="compare">
       <div class="flow">
-        <h3>Manual process <span class="pill">5 manual steps</span></h3>
+        <h3><span data-i18n="im.manual">Manual process</span> <span class="pill" data-i18n="im.manualPill">5 manual steps</span></h3>
         <ol>
-          <li class="fstep"><span class="who h">Customer</span>Customer asks a question</li>
-          <li class="fstep"><span class="who h">Employee</span>Employee searches documentation</li>
-          <li class="fstep"><span class="who h">Employee</span>Employee writes response</li>
-          <li class="fstep"><span class="who h">Employee</span>Employee updates CRM</li>
-          <li class="fstep"><span class="who h">Employee</span>Employee moves to next task</li>
+          <li class="fstep"><span class="who h" data-i18n="who.customer">Customer</span><span data-i18n="m1">Customer asks a question</span></li>
+          <li class="fstep"><span class="who h" data-i18n="who.employee">Employee</span><span data-i18n="m2">Employee searches documentation</span></li>
+          <li class="fstep"><span class="who h" data-i18n="who.employee">Employee</span><span data-i18n="m3">Employee writes response</span></li>
+          <li class="fstep"><span class="who h" data-i18n="who.employee">Employee</span><span data-i18n="m4">Employee updates CRM</span></li>
+          <li class="fstep"><span class="who h" data-i18n="who.employee">Employee</span><span data-i18n="m5">Employee moves to next task</span></li>
         </ol>
       </div>
       <div class="flow ai">
-        <h3>AI-powered process <span class="pill">Human oversight</span></h3>
+        <h3><span data-i18n="im.ai">AI-powered process</span> <span class="pill" data-i18n="im.aiPill">Human oversight</span></h3>
         <ol>
-          <li class="fstep"><span class="who a">Customer</span>Customer asks a question</li>
-          <li class="fstep"><span class="who a">AI</span>AI understands the request</li>
-          <li class="fstep"><span class="who a">AI</span>AI searches company knowledge</li>
-          <li class="fstep"><span class="who a">AI</span>AI responds</li>
-          <li class="fstep"><span class="who a">AI</span>AI updates CRM</li>
-          <li class="fstep"><span class="who r">Human</span>Human reviews when necessary</li>
+          <li class="fstep"><span class="who a" data-i18n="who.customer">Customer</span><span data-i18n="a1">Customer asks a question</span></li>
+          <li class="fstep"><span class="who a" data-i18n="who.ai">AI</span><span data-i18n="a2">AI understands the request</span></li>
+          <li class="fstep"><span class="who a" data-i18n="who.ai">AI</span><span data-i18n="a3">AI searches company knowledge</span></li>
+          <li class="fstep"><span class="who a" data-i18n="who.ai">AI</span><span data-i18n="a4">AI responds</span></li>
+          <li class="fstep"><span class="who a" data-i18n="who.ai">AI</span><span data-i18n="a5">AI updates CRM</span></li>
+          <li class="fstep"><span class="who r" data-i18n="who.human">Human</span><span data-i18n="a6">Human reviews when necessary</span></li>
         </ol>
       </div>
     </div>
-    <div class="outcomes" aria-label="What changes">
-      <span class="chip">Less manual work</span>→<span class="chip">More automation</span>→<span class="chip">Human oversight</span>→<span class="chip">Better efficiency</span>
+    <div class="outcomes" role="group" data-i18n-attr="aria-label:out.aria" aria-label="What changes">
+      <span class="chip" data-i18n="out1">Less manual work</span><i class="arr" aria-hidden="true"></i><span class="chip" data-i18n="out2">More automation</span><i class="arr" aria-hidden="true"></i><span class="chip" data-i18n="out3">Human oversight</span><i class="arr" aria-hidden="true"></i><span class="chip" data-i18n="out4">Better efficiency</span>
     </div>
-    <button class="btn btn-ghost replay" id="replay" type="button">↻ Replay</button>
+    <button class="btn btn-ghost replay" id="replay" type="button">↻ <span data-i18n="replay">Replay</span></button>
   </div>
 </section>
 
@@ -489,20 +520,20 @@ textarea.d-field{min-height:130px;resize:vertical}
 <section aria-labelledby="pers-h">
   <div class="wrap pers-grid">
     <div class="pers-copy">
-      <span class="eyebrow">Made for you</span>
-      <h2 id="pers-h">What could AI do specifically for your business?</h2>
-      <p class="lead" style="margin-top:20px">Every business is different. The best AI solution depends on your workflows, challenges, tools, goals, and the type of work your team performs.</p>
-      <a class="btn btn-primary" href="#discovery">Find My AI Opportunities <span class="arr" aria-hidden="true">→</span></a>
+      <span class="eyebrow" data-i18n="pers.eyebrow">Made for you</span>
+      <h2 id="pers-h" data-i18n="pers.h2">What could AI do specifically for your business?</h2>
+      <p class="lead" style="margin-top:20px" data-i18n="pers.lead">Every business is different. The best AI solution depends on your workflows, challenges, tools, goals, and the type of work your team performs.</p>
+      <a class="btn btn-primary" href="#discovery"><span data-i18n="cta.find">Find My AI Opportunities</span> <span class="arr" aria-hidden="true"></span></a>
     </div>
-    <div class="eval" aria-label="What the discovery looks at">
-      <div class="rv"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Business challenges</div>
-      <div class="rv"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Current workflows</div>
-      <div class="rv"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Existing software</div>
-      <div class="rv"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Manual processes</div>
-      <div class="rv"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>AI maturity</div>
-      <div class="rv"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Desired outcomes</div>
-      <div class="rv"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Automation opportunities</div>
-      <div class="rv"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Integration requirements</div>
+    <div class="eval" role="group" data-i18n-attr="aria-label:eval.aria" aria-label="What the discovery looks at">
+      <div class="rv"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span data-i18n="e1">Business challenges</span></div>
+      <div class="rv"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span data-i18n="e2">Current workflows</span></div>
+      <div class="rv"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span data-i18n="e3">Existing software</span></div>
+      <div class="rv"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span data-i18n="e4">Manual processes</span></div>
+      <div class="rv"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span data-i18n="e5">AI maturity</span></div>
+      <div class="rv"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span data-i18n="e6">Desired outcomes</span></div>
+      <div class="rv"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span data-i18n="e7">Automation opportunities</span></div>
+      <div class="rv"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span data-i18n="e8">Integration requirements</span></div>
     </div>
   </div>
 </section>
@@ -511,30 +542,30 @@ textarea.d-field{min-height:130px;resize:vertical}
 <section class="gets" aria-labelledby="get-h">
   <div class="wrap">
     <div class="center">
-      <span class="eyebrow">What you get</span>
-      <h2 id="get-h">Something useful, not just a form.</h2>
-      <p class="lead" style="margin-top:16px">You get personalized results before we ever ask for your contact details.</p>
+      <span class="eyebrow" data-i18n="get.eyebrow">What you get</span>
+      <h2 id="get-h" data-i18n="get.h2">Something useful, not just a form.</h2>
+      <p class="lead" style="margin-top:16px" data-i18n="get.lead">You get personalized results before we ever ask for your contact details.</p>
     </div>
     <div class="get-grid">
-      <div class="get rv"><small>01</small><h3>AI Opportunity Map</h3><p>See where AI could create the most impact across your business.</p></div>
-      <div class="get rv"><small>02</small><h3>Recommended Use Cases</h3><p>Discover practical AI opportunities relevant to how you work.</p></div>
-      <div class="get rv"><small>03</small><h3>Recommended Solution</h3><p>Learn which direction fits best:</p><ul><li>AI Assistant</li><li>AI Automation</li><li>AI Agent</li><li>AI Integration</li><li>Custom AI Application</li></ul></div>
-      <div class="get rv"><small>04</small><h3>Implementation Direction</h3><p>Understand what the next implementation could look like.</p></div>
-      <div class="get rv"><small>05</small><h3>Next Steps</h3><p>A clear path from opportunity to implementation.</p></div>
+      <div class="get rv"><small>01</small><h3 data-i18n="g1t">AI Opportunity Map</h3><p data-i18n="g1d">See where AI could create the most impact across your business.</p></div>
+      <div class="get rv"><small>02</small><h3 data-i18n="g2t">Recommended Use Cases</h3><p data-i18n="g2d">Discover practical AI opportunities relevant to how you work.</p></div>
+      <div class="get rv"><small>03</small><h3 data-i18n="g3t">Recommended Solution</h3><p data-i18n="g3d">Learn which direction fits best:</p><ul><li data-i18n="soln.assistant">AI Assistant</li><li data-i18n="soln.automation">AI Automation</li><li data-i18n="soln.agent">AI Agent</li><li data-i18n="soln.integration">AI Integration</li><li data-i18n="soln.custom">Custom AI Application</li></ul></div>
+      <div class="get rv"><small>04</small><h3 data-i18n="g4t">Implementation Direction</h3><p data-i18n="g4d">Understand what the next implementation could look like.</p></div>
+      <div class="get rv"><small>05</small><h3 data-i18n="g5t">Next Steps</h3><p data-i18n="g5d">A clear path from opportunity to implementation.</p></div>
     </div>
-    <div class="center-cta"><a class="btn btn-primary" href="#discovery">Start Your AI Discovery <span class="arr" aria-hidden="true">→</span></a></div>
+    <div class="center-cta"><a class="btn btn-primary" href="#discovery"><span data-i18n="cta.primary">Start Your AI Discovery</span> <span class="arr" aria-hidden="true"></span></a></div>
   </div>
 </section>
 
 <!-- AUDIENCE -->
 <section aria-labelledby="who-h">
   <div class="wrap center">
-    <span class="eyebrow">Who it's for</span>
-    <h2 id="who-h">Built for businesses at every stage.</h2>
+    <span class="eyebrow" data-i18n="aud.eyebrow">Who it's for</span>
+    <h2 id="who-h" data-i18n="aud.h2">Built for businesses at every stage.</h2>
     <div class="aud">
-      <span>Small businesses</span><span>Startups</span><span>Growing companies</span><span>Established businesses</span><span>Teams exploring AI</span><span>Companies already using AI</span><span>Companies looking for automation</span><span>Companies considering custom AI</span>
+      <span data-i18n="aud1">Small businesses</span><span data-i18n="aud2">Startups</span><span data-i18n="aud3">Growing companies</span><span data-i18n="aud4">Established businesses</span><span data-i18n="aud5">Teams exploring AI</span><span data-i18n="aud6">Companies already using AI</span><span data-i18n="aud7">Companies looking for automation</span><span data-i18n="aud8">Companies considering custom AI</span>
     </div>
-    <p class="lead" style="margin-top:36px">Whether you're just exploring AI or already using it, we'll help identify what makes sense for your business.</p>
+    <p class="lead" style="margin-top:36px" data-i18n="aud.lead">Whether you're just exploring AI or already using it, we'll help identify what makes sense for your business.</p>
   </div>
 </section>
 
@@ -542,14 +573,14 @@ textarea.d-field{min-height:130px;resize:vertical}
 <section id="about" aria-labelledby="pr-h" style="padding-top:0">
   <div class="wrap">
     <div class="center">
-      <span class="eyebrow">How we work</span>
-      <h2 id="pr-h">Four principles behind every recommendation.</h2>
+      <span class="eyebrow" data-i18n="pr.eyebrow">How we work</span>
+      <h2 id="pr-h" data-i18n="pr.h2">Four principles behind every recommendation.</h2>
     </div>
     <div class="princ">
-      <div class="pr rv"><b>1</b><h3>Business First</h3><p>We start with the problem, not the technology.</p></div>
-      <div class="pr rv"><b>2</b><h3>Integration First</h3><p>AI should work with the tools your business already uses.</p></div>
-      <div class="pr rv"><b>3</b><h3>Human in the Loop</h3><p>Automation doesn't mean losing control.</p></div>
-      <div class="pr rv"><b>4</b><h3>Outcome Focused</h3><p>The goal isn't to add AI. The goal is to create measurable business value.</p></div>
+      <div class="pr rv"><b>1</b><h3 data-i18n="pr1t">Business First</h3><p data-i18n="pr1d">We start with the problem, not the technology.</p></div>
+      <div class="pr rv"><b>2</b><h3 data-i18n="pr2t">Integration First</h3><p data-i18n="pr2d">AI should work with the tools your business already uses.</p></div>
+      <div class="pr rv"><b>3</b><h3 data-i18n="pr3t">Human in the Loop</h3><p data-i18n="pr3d">Automation doesn't mean losing control.</p></div>
+      <div class="pr rv"><b>4</b><h3 data-i18n="pr4t">Outcome Focused</h3><p data-i18n="pr4d">The goal isn't to add AI. The goal is to create measurable business value.</p></div>
     </div>
   </div>
 </section>
@@ -557,14 +588,14 @@ textarea.d-field{min-height:130px;resize:vertical}
 <!-- FAQ -->
 <section id="faq" aria-labelledby="faq-h" style="padding-top:0">
   <div class="wrap">
-    <div class="center"><span class="eyebrow">FAQ</span><h2 id="faq-h">Questions, answered.</h2></div>
+    <div class="center"><span class="eyebrow" data-i18n="faq.eyebrow">FAQ</span><h2 id="faq-h" data-i18n="faq.h2">Questions, answered.</h2></div>
     <div class="faq">
-      <details><summary>Do I need technical knowledge?</summary><p>No. The discovery process is designed for business users.</p></details>
-      <details><summary>How long does the discovery take?</summary><p>Approximately 5–10 minutes.</p></details>
-      <details><summary>What if I don't know what AI solution I need?</summary><p>That's exactly what the discovery process is designed to help determine.</p></details>
-      <details><summary>Can AI work with my existing software?</summary><p>Yes. AI solutions can often integrate with existing business tools and systems.</p></details>
-      <details><summary>Can you build custom AI solutions?</summary><p>Yes. If existing tools aren't enough, the recommendation can lead toward a custom AI application.</p></details>
-      <details><summary>What if we're only starting to explore AI?</summary><p>That's completely fine. The discovery process works for businesses at different stages of AI adoption.</p></details>
+      <details><summary data-i18n="q1">Do I need technical knowledge?</summary><p data-i18n="an1">No. The discovery process is designed for business users.</p></details>
+      <details><summary data-i18n="q2">How long does the discovery take?</summary><p data-i18n="an2">Approximately 5–10 minutes.</p></details>
+      <details><summary data-i18n="q3">What if I don't know what AI solution I need?</summary><p data-i18n="an3">That's exactly what the discovery process is designed to help determine.</p></details>
+      <details><summary data-i18n="q4">Can AI work with my existing software?</summary><p data-i18n="an4">Yes. AI solutions can often integrate with existing business tools and systems.</p></details>
+      <details><summary data-i18n="q5">Can you build custom AI solutions?</summary><p data-i18n="an5">Yes. If existing tools aren't enough, the recommendation can lead toward a custom AI application.</p></details>
+      <details><summary data-i18n="q6">What if we're only starting to explore AI?</summary><p data-i18n="an6">That's completely fine. The discovery process works for businesses at different stages of AI adoption.</p></details>
     </div>
   </div>
 </section>
@@ -572,10 +603,10 @@ textarea.d-field{min-height:130px;resize:vertical}
 <!-- FINAL CTA -->
 <section class="final" id="final-cta" aria-labelledby="fin-h">
   <div class="wrap">
-    <h2 id="fin-h">You don't need to know exactly what AI you need.</h2>
-    <p class="lead">You just need to know what you want to improve. We'll help identify the opportunities.</p>
-    <a class="btn btn-light" href="#discovery">Start Your AI Discovery <span class="arr" aria-hidden="true">→</span></a>
-    <p class="micro">5–10 minutes · No technical knowledge required</p>
+    <h2 id="fin-h" data-i18n="fin.h2">You don't need to know exactly what AI you need.</h2>
+    <p class="lead" data-i18n="fin.lead">You just need to know what you want to improve. We'll help identify the opportunities.</p>
+    <a class="btn btn-light" href="#discovery"><span data-i18n="cta.primary">Start Your AI Discovery</span> <span class="arr" aria-hidden="true"></span></a>
+    <p class="micro" data-i18n="fin.micro">5–10 minutes · No technical knowledge required</p>
   </div>
 </section>
 
@@ -583,50 +614,432 @@ textarea.d-field{min-height:130px;resize:vertical}
 
 <footer>
   <div class="wrap foot">
-    <a class="logo" href="#top"><span class="logo-mark" aria-hidden="true"></span>Lumina AI</a>
-    <nav aria-label="Footer"><a href="#solutions">AI Solutions</a><a href="#how">How It Works</a><a href="#use-cases">Use Cases</a><a href="#faq">FAQ</a></nav>
-    <span>© <span id="yr">2026</span> Lumina AI</span>
+    <a class="logo" href="#top"><span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg></span><span>Dalil <b>AI</b></span></a>
+    <nav aria-label="Footer" data-i18n-attr="aria-label:foot.aria"><a href="#solutions" data-i18n="nav.solutions">AI Solutions</a><a href="#how" data-i18n="nav.how">How It Works</a><a href="#use-cases" data-i18n="nav.cases">Use Cases</a><a href="#faq" data-i18n="nav.faq">FAQ</a><a href="/privacy" data-i18n="nav.privacy">Privacy Policy</a></nav>
+    <span>© <span id="yr">2026</span> Dalil AI</span>
   </div>
 </footer>
 
-<div class="mcta" id="mcta"><a class="btn btn-primary" href="#discovery">Start Your AI Discovery <span aria-hidden="true">→</span></a></div>
-
+<div class="mcta" id="mcta"><a class="btn btn-primary" href="#discovery"><span data-i18n="cta.primary">Start Your AI Discovery</span> <span class="arr" aria-hidden="true"></span></a></div>
 
 <!-- AI DISCOVERY (same page, opens as a full-screen layer) -->
 <div class="disc" id="discovery" role="dialog" aria-modal="true" aria-labelledby="dTitle" hidden>
   <div class="d-top">
-    <a class="logo" href="#top" id="dLogo" aria-label="Lumina AI"><span class="logo-mark" aria-hidden="true"></span>Lumina AI</a>
-    <button class="d-close" type="button" id="dClose">Close ✕</button>
+    <a class="logo" href="#top" id="dLogo" aria-label="Dalil AI"><span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg></span><span>Dalil <b>AI</b></span></a>
+    <button class="d-close" type="button" id="dClose"><span data-i18n="d.close">Close</span> ✕</button>
   </div>
   <div class="d-prog" id="dProg">
-    <div class="d-prog-meta"><span id="dStepLbl">Step 1 of 8</span><span>About 5–10 minutes</span></div>
+    <div class="d-prog-meta"><span id="dStepLbl">Step 1 of 8</span><span data-i18n="d.about">About 5–10 minutes</span></div>
     <div class="d-track" aria-hidden="true"><b id="dBar"></b></div>
   </div>
   <div class="d-scroll" id="dScroll"><div class="d-inner" id="dBody"></div></div>
 </div>
 
+<!-- ===== TRANSLATIONS (English · Français · العربية) ===== -->
+<script id="i18n-dict">
+var DICT = {
+en:{
+"skip":"Skip to content","logo.aria":"Dalil AI home","nav.aria":"Main","lang.aria":"Language","foot.aria":"Footer",
+"menu.open":"Open menu","menu.close":"Close menu",
+"nav.solutions":"AI Solutions","nav.how":"How It Works","nav.cases":"Use Cases","nav.about":"About","nav.faq":"FAQ","nav.cta":"Start AI Discovery","nav.privacy":"Privacy Policy",
+"meta.title":"AI Consulting & Automation for Business | Start Your AI Discovery",
+"meta.desc":"Find out where AI, automation and AI agents can save your business time, cut costs and create new opportunities. Take the 5–10 minute AI Discovery and get personalized recommendations.",
+"meta.ogtitle":"Discover Where AI Can Actually Make a Difference in Your Business",
+"meta.ogdesc":"A 5–10 minute AI Discovery that identifies your best AI and automation opportunities. No technical knowledge required.",
+"hero.eyebrow":"AI consulting & automation",
+"hero.h1":"Discover Where AI Can <span class=\"grad\">Actually Make a Difference</span> in Your Business.",
+"hero.lead":"Tell us how your business works. We'll identify where AI, automation, and intelligent agents can save time, reduce costs, and create new opportunities.",
+"cta.primary":"Start Your AI Discovery","cta.discover":"Discover My AI Opportunities","cta.find":"Find My AI Opportunities",
+"hero.secondary":"See How It Works","hero.micro":"5–10 minutes · No technical knowledge required · Personalized recommendations",
+"journey.aria":"The discovery journey","j1":"Your business","j2":"Challenges","j3":"Workflows","j4":"AI opportunities","j5":"Your AI plan",
+"scan.aria":"Example AI Opportunity Scan showing customer support, workflow automation, lead qualification and data analytics, with three high-impact opportunities found. Illustrative example only.",
+"scan.title":"AI OPPORTUNITY SCAN","scan.example":"Example","tag.high":"High impact","tag.explore":"Worth exploring","scan.complete":"Scan complete","scan.three":"3 High-Impact Opportunities","scan.view":"View Your AI Opportunities",
+"oppn.support":"Customer Support","oppn.sales":"Lead Qualification & Sales","oppn.marketing":"Marketing","oppn.ops":"Workflow Automation","oppn.data":"Data & Analytics","oppn.knowledge":"Internal Knowledge","oppn.agents":"AI Agents","oppn.custom":"Custom AI Application",
+"oppt.support":"An assistant that answers common questions from your own knowledge, helps your customers around the clock, and hands complex cases to your team.",
+"oppt.sales":"Automatically qualify new leads, send timely follow-ups, and show your sales team who to talk to first.",
+"oppt.marketing":"Draft content, summarize campaign results and take over repetitive marketing tasks, with your team approving the output.",
+"oppt.ops":"Take repetitive, rule-based work off your team and keep information flowing between the tools you already use.",
+"oppt.data":"Ask questions of your business data in plain language and get clear insights without waiting on manual reports.",
+"oppt.knowledge":"Let employees find answers across documents, policies and systems in seconds instead of asking around.",
+"oppt.agents":"AI that completes multi-step tasks across your systems, such as gathering information, taking action and reporting back, with human review where it matters.",
+"oppt.custom":"A purpose-built AI solution shaped around the way your business uniquely works.",
+"soln.assistant":"AI Assistant","soln.automation":"AI Automation","soln.agent":"AI Agent","soln.integration":"AI Integration","soln.custom":"Custom AI Application",
+"sold.assistant":"An assistant that answers questions from your own information and works alongside your team.",
+"sold.automation":"Automations that take repetitive work off your team while people stay in control of decisions.",
+"sold.agent":"An agent that completes multi-step tasks across your systems and reports back for approval.",
+"sold.integration":"AI built into the software you already use, so your tools work together instead of in silos.",
+"sold.custom":"A purpose-built solution designed around requirements that off-the-shelf tools don't meet.",
+"sols.assistant":["Choose the knowledge it should use (documents, FAQs, past tickets)","Start with one channel, such as your website or internal chat","Set clear rules for when a person takes over"],
+"sols.automation":["Pick one repetitive workflow with clear start and end points","Connect the tools involved so data stops being copied by hand","Add a human review step for anything sensitive"],
+"sols.agent":["Choose one multi-step task your team repeats often","Define what the agent can read, change and never touch","Run it with human approval first, then widen its freedom"],
+"sols.integration":["Map which systems need to share information","Connect them securely, starting with the most painful gap","Add AI on top where it removes manual steps"],
+"sols.custom":["Document the process and the outcome you need","Prototype the core experience on a small scale","Test with real users before expanding"],
+"p.eyebrow":"The real challenge","p.h2":"You don't need more AI tools. You need the right AI opportunities.",
+"p.lead":"New tools launch every week. It's hard to know which ones matter for your business, and harder still to know where to begin.",
+"pain1":"Too many AI tools and possibilities","pain2":"Unclear return on investment","pain3":"Repetitive manual work eating the day","pain4":"Disconnected software that doesn't talk","pain5":"Information that's difficult to find","pain6":"Employees manually moving data between systems","pain7":"Uncertainty about where to start",
+"p.pull":"The first step isn't choosing an AI tool. <span>It's understanding where AI can create the most value.</span>",
+"how.eyebrow":"How it works","how.h2":"From “where do I start?” to a clear plan.","how.lead":"Four steps. You answer simple questions about your business; we do the thinking.",
+"s1t":"Understand","s1d":"We learn about your business, workflows, challenges, tools, and goals.",
+"s2t":"Identify","s2d":"We find the areas where AI and automation could create meaningful impact.",
+"s3t":"Recommend","s3d":"We point to the most suitable direction:",
+"s4t":"Build","s4d":"We turn the opportunity into a practical solution your team can use.",
+"uc.eyebrow":"Use cases","uc.h2":"What Can AI Do For Your Business?","uc.lead":"Practical ways teams are putting AI to work, in plain language.",
+"uc1t":"Customer Support","uc1d":"Answer questions, search company knowledge, assist customers, and escalate complex requests.",
+"uc2t":"Sales","uc2d":"Qualify leads, automate follow-ups, and help sales teams prioritize opportunities.",
+"uc3t":"Marketing","uc3d":"Generate content, analyze campaigns, and automate repetitive marketing tasks.",
+"uc4t":"Operations","uc4d":"Automate repetitive workflows and connect your business systems.",
+"uc5t":"Data & Analytics","uc5d":"Analyze business data and turn information into useful insights.",
+"uc6t":"Internal Knowledge","uc6d":"Help employees quickly find information across company documents and systems.",
+"uc7t":"AI Agents","uc7d":"Let AI perform multi-step tasks and interact with business systems, with your team in control.",
+"uc8t":"Custom AI","uc8d":"Build AI solutions around your unique business requirements.",
+"im.eyebrow":"Imagine this","im.h2":"Same request. Far fewer manual steps.","im.lead":"See what happens to a single customer question when repetitive work is handed to AI.",
+"im.manual":"Manual process","im.manualPill":"5 manual steps","im.ai":"AI-powered process","im.aiPill":"Human oversight",
+"who.customer":"Customer","who.employee":"Employee","who.ai":"AI","who.human":"Human",
+"m1":"Customer asks a question","m2":"Employee searches documentation","m3":"Employee writes response","m4":"Employee updates CRM","m5":"Employee moves to next task",
+"a1":"Customer asks a question","a2":"AI understands the request","a3":"AI searches company knowledge","a4":"AI responds","a5":"AI updates CRM","a6":"Human reviews when necessary",
+"out.aria":"What changes","out1":"Less manual work","out2":"More automation","out3":"Human oversight","out4":"Better efficiency","replay":"Replay",
+"pers.eyebrow":"Made for you","pers.h2":"What could AI do specifically for your business?","pers.lead":"Every business is different. The best AI solution depends on your workflows, challenges, tools, goals, and the type of work your team performs.",
+"eval.aria":"What the discovery looks at","e1":"Business challenges","e2":"Current workflows","e3":"Existing software","e4":"Manual processes","e5":"AI maturity","e6":"Desired outcomes","e7":"Automation opportunities","e8":"Integration requirements",
+"get.eyebrow":"What you get","get.h2":"Something useful, not just a form.","get.lead":"You get personalized results before we ever ask for your contact details.",
+"g1t":"AI Opportunity Map","g1d":"See where AI could create the most impact across your business.",
+"g2t":"Recommended Use Cases","g2d":"Discover practical AI opportunities relevant to how you work.",
+"g3t":"Recommended Solution","g3d":"Learn which direction fits best:",
+"g4t":"Implementation Direction","g4d":"Understand what the next implementation could look like.",
+"g5t":"Next Steps","g5d":"A clear path from opportunity to implementation.",
+"aud.eyebrow":"Who it's for","aud.h2":"Built for businesses at every stage.",
+"aud1":"Small businesses","aud2":"Startups","aud3":"Growing companies","aud4":"Established businesses","aud5":"Teams exploring AI","aud6":"Companies already using AI","aud7":"Companies looking for automation","aud8":"Companies considering custom AI",
+"aud.lead":"Whether you're just exploring AI or already using it, we'll help identify what makes sense for your business.",
+"pr.eyebrow":"How we work","pr.h2":"Four principles behind every recommendation.",
+"pr1t":"Business First","pr1d":"We start with the problem, not the technology.",
+"pr2t":"Integration First","pr2d":"AI should work with the tools your business already uses.",
+"pr3t":"Human in the Loop","pr3d":"Automation doesn't mean losing control.",
+"pr4t":"Outcome Focused","pr4d":"The goal isn't to add AI. The goal is to create measurable business value.",
+"faq.eyebrow":"FAQ","faq.h2":"Questions, answered.",
+"q1":"Do I need technical knowledge?","an1":"No. The discovery process is designed for business users.",
+"q2":"How long does the discovery take?","an2":"Approximately 5–10 minutes.",
+"q3":"What if I don't know what AI solution I need?","an3":"That's exactly what the discovery process is designed to help determine.",
+"q4":"Can AI work with my existing software?","an4":"Yes. AI solutions can often integrate with existing business tools and systems.",
+"q5":"Can you build custom AI solutions?","an5":"Yes. If existing tools aren't enough, the recommendation can lead toward a custom AI application.",
+"q6":"What if we're only starting to explore AI?","an6":"That's completely fine. The discovery process works for businesses at different stages of AI adoption.",
+"fin.h2":"You don't need to know exactly what AI you need.","fin.lead":"You just need to know what you want to improve. We'll help identify the opportunities.","fin.micro":"5–10 minutes · No technical knowledge required",
+"d.close":"Close","d.step":"Step {n} of {t}","d.about":"About 5–10 minutes","d.back":"Back","d.next":"Continue","d.see":"See My AI Opportunities",
+"d.errSingle":"Please choose one option to continue.","d.errMulti":"Please choose at least one option to continue.",
+"d.notesPh":"For example: we spend hours every week copying order details between our shop and our spreadsheets.","d.notesHint":"Skip this if you like. You can still get your results.",
+"d.analyzing":"Analyzing your answers…","d.analyzingSub":"Matching your workflows and goals to AI opportunities.",
+"d.resEyebrow":"Your results","d.resH":"Your personalized AI opportunities",
+"d.resSub":"Based on your answers, these are the areas where AI is most likely to help. Ranked by how well they match what you told us.",
+"d.resSubGen":"You told us you're still exploring, so here are common starting points for businesses like yours. A conversation will sharpen them.",
+"d.map":"AI Opportunity Map","d.best":"Best match","d.fit":"Bars show how closely each area matches your answers. They are not predictions of savings.",
+"d.rec":"Recommended solution","d.impl":"Implementation direction","d.implIntro":"What a first step could look like:",
+"d.nextT":"Next steps","d.n1":"Talk through these results with us so we can validate them against how you really work.","d.n2":"Choose one opportunity to start with.","d.n3":"Agree a practical plan and timeline for a first version.",
+"d.contactT":"Want to turn this into a plan?","d.contactP":"Your results are yours, with nothing required. If you'd like us to review them with you, leave your details and we'll reach out.",
+"d.name":"Your name","d.email":"Work email","d.company":"Company","d.optional":"(optional)","d.send":"Review my results with you",
+"priv.line":"We'll only use your details to contact you about your results. We never sell your data. <a href=\"/privacy\" target=\"_blank\" rel=\"noopener\">Privacy Policy</a>",
+"d.thanksT":"Thank you","d.thanksP":"We've got your details and will be in touch.",
+"d.errName":"Please enter your name.","d.errEmail":"Please enter a valid email address.","d.sending":"Sending…","d.fail":"Something went wrong. Please try again in a moment.",
+"d.restart":"Start over","d.backPage":"Back to the page",
+"step.goals.q":"What would you like AI to do for your business?","step.goals.s":"Choose everything that sounds useful. There are no wrong answers.",
+"step.goals.o":["Answer customer questions faster","Qualify leads and follow up automatically","Create marketing content and reports","Automate repetitive tasks","Understand my data and get insights","Help my team find information quickly","Handle multi-step tasks on its own","Something specific to my business","I'm not sure yet"],
+"step.industry.q":"What kind of business do you run?","step.industry.s":"This helps us keep the recommendations relevant.",
+"step.industry.o":["Professional services","E-commerce or retail","Software or technology","Healthcare or wellness","Finance or insurance","Manufacturing or logistics","Education or training","Something else"],
+"step.size.q":"How big is your team?","step.size.s":"Roughly is fine.","step.size.o":["Just me","2–10 people","11–50 people","51–200 people","More than 200"],
+"step.challenges.q":"What slows your team down most today?","step.challenges.s":"Choose all that apply.",
+"step.challenges.o":["Too much repetitive manual work","Customers wait too long for answers","Information is hard to find","Our software tools don't connect","Leads fall through the cracks","Reports and data take too long","Creating content is slow","I'm not sure where AI would help"],
+"step.tools.q":"Which tools does your team already use?","step.tools.s":"AI works best when it fits into what you have.",
+"step.tools.o":["Email and calendar","CRM (customer records)","Spreadsheets","Help desk or chat support","Accounting or finance software","Project management tools","E-commerce platform","Custom or in-house software","None of these yet"],
+"step.maturity.q":"Where are you with AI today?","step.maturity.s":"Be honest. Every starting point is fine.",
+"step.maturity.o":["We haven't started","Some of us try AI tools personally","We use AI in a few workflows","AI is part of our core operations"],
+"step.outcomes.q":"What would success look like?","step.outcomes.s":"Choose the outcomes that matter most.",
+"step.outcomes.o":["Save time","Reduce costs","Increase sales","Improve customer experience","Make better decisions","Discover new opportunities"],
+"step.notes.q":"Anything else we should know?","step.notes.s":"Optional. Describe a process that frustrates you, or a goal in your own words."
+},
+fr:{
+"skip":"Aller au contenu","logo.aria":"Dalil AI – accueil","nav.aria":"Navigation principale","lang.aria":"Langue","foot.aria":"Pied de page",
+"menu.open":"Ouvrir le menu","menu.close":"Fermer le menu",
+"nav.solutions":"Solutions IA","nav.how":"Comment ça marche","nav.cases":"Cas d’usage","nav.about":"À propos","nav.faq":"FAQ","nav.cta":"Démarrer la découverte IA","nav.privacy":"Politique de confidentialité",
+"meta.title":"Conseil et automatisation IA pour entreprises | Démarrez votre découverte IA",
+"meta.desc":"Découvrez où l’IA, l’automatisation et les agents IA peuvent faire gagner du temps à votre entreprise, réduire vos coûts et créer de nouvelles opportunités. Une découverte de 5 à 10 minutes avec des recommandations personnalisées.",
+"meta.ogtitle":"Découvrez où l’IA peut réellement faire la différence dans votre entreprise",
+"meta.ogdesc":"Une découverte IA de 5 à 10 minutes qui identifie vos meilleures opportunités d’IA et d’automatisation. Aucune connaissance technique requise.",
+"hero.eyebrow":"Conseil et automatisation IA",
+"hero.h1":"Découvrez où l’IA peut <span class=\"grad\">réellement faire la différence</span> dans votre entreprise.",
+"hero.lead":"Expliquez-nous comment fonctionne votre entreprise. Nous identifierons où l’IA, l’automatisation et les agents intelligents peuvent vous faire gagner du temps, réduire vos coûts et ouvrir de nouvelles opportunités.",
+"cta.primary":"Démarrer ma découverte IA","cta.discover":"Découvrir mes opportunités IA","cta.find":"Trouver mes opportunités IA",
+"hero.secondary":"Voir comment ça marche","hero.micro":"5 à 10 minutes · Aucune connaissance technique requise · Recommandations personnalisées",
+"journey.aria":"Le parcours de découverte","j1":"Votre entreprise","j2":"Vos défis","j3":"Vos processus","j4":"Opportunités IA","j5":"Votre plan IA",
+"scan.aria":"Exemple d’analyse d’opportunités IA : support client, automatisation des processus, qualification des prospects et analyse de données, avec trois opportunités à fort impact. Exemple illustratif uniquement.",
+"scan.title":"ANALYSE D’OPPORTUNITÉS IA","scan.example":"Exemple","tag.high":"Fort impact","tag.explore":"À explorer","scan.complete":"Analyse terminée","scan.three":"3 opportunités à fort impact","scan.view":"Voir mes opportunités IA",
+"oppn.support":"Support client","oppn.sales":"Qualification de prospects et ventes","oppn.marketing":"Marketing","oppn.ops":"Automatisation des processus","oppn.data":"Données et analyse","oppn.knowledge":"Connaissances internes","oppn.agents":"Agents IA","oppn.custom":"Application IA sur mesure",
+"oppt.support":"Un assistant qui répond aux questions courantes à partir de vos propres connaissances, accompagne vos clients 24 h/24 et transmet les cas complexes à votre équipe.",
+"oppt.sales":"Qualifiez automatiquement les nouveaux prospects, envoyez des relances au bon moment et montrez à vos commerciaux qui contacter en premier.",
+"oppt.marketing":"Rédigez des contenus, résumez les résultats de vos campagnes et déléguez les tâches marketing répétitives, avec validation de votre équipe.",
+"oppt.ops":"Déchargez votre équipe des tâches répétitives et faites circuler l’information entre les outils que vous utilisez déjà.",
+"oppt.data":"Interrogez vos données en langage courant et obtenez des analyses claires, sans attendre des rapports manuels.",
+"oppt.knowledge":"Permettez à vos employés de trouver une réponse dans vos documents, procédures et systèmes en quelques secondes.",
+"oppt.agents":"Une IA qui réalise des tâches en plusieurs étapes dans vos systèmes (collecter, agir, rendre compte), avec une validation humaine là où c’est important.",
+"oppt.custom":"Une solution IA conçue sur mesure pour la façon unique dont votre entreprise fonctionne.",
+"soln.assistant":"Assistant IA","soln.automation":"Automatisation IA","soln.agent":"Agent IA","soln.integration":"Intégration IA","soln.custom":"Application IA sur mesure",
+"sold.assistant":"Un assistant qui répond aux questions à partir de vos propres informations et travaille aux côtés de votre équipe.",
+"sold.automation":"Des automatisations qui déchargent votre équipe des tâches répétitives, tandis que les décisions restent entre les mains de vos collaborateurs.",
+"sold.agent":"Un agent qui réalise des tâches en plusieurs étapes dans vos systèmes et vous rend compte pour validation.",
+"sold.integration":"Une IA intégrée aux logiciels que vous utilisez déjà, pour que vos outils fonctionnent ensemble au lieu de rester cloisonnés.",
+"sold.custom":"Une solution conçue sur mesure pour des besoins que les outils prêts à l’emploi ne couvrent pas.",
+"sols.assistant":["Choisir les connaissances à utiliser (documents, FAQ, anciens tickets)","Commencer par un seul canal, comme votre site web ou votre messagerie interne","Définir des règles claires pour le passage à un humain"],
+"sols.automation":["Choisir un processus répétitif avec un début et une fin clairs","Connecter les outils concernés pour ne plus recopier les données à la main","Ajouter une étape de validation humaine pour tout ce qui est sensible"],
+"sols.agent":["Choisir une tâche en plusieurs étapes que votre équipe répète souvent","Définir ce que l’agent peut lire, modifier et ne doit jamais toucher","Le lancer avec validation humaine, puis élargir progressivement son autonomie"],
+"sols.integration":["Cartographier les systèmes qui doivent échanger des informations","Les connecter de façon sécurisée, en commençant par le point de friction principal","Ajouter l’IA là où elle supprime des étapes manuelles"],
+"sols.custom":["Documenter le processus et le résultat attendu","Prototyper l’expérience essentielle à petite échelle","Tester avec de vrais utilisateurs avant de l’étendre"],
+"p.eyebrow":"Le vrai défi","p.h2":"Vous n’avez pas besoin de plus d’outils IA. Vous avez besoin des bonnes opportunités IA.",
+"p.lead":"De nouveaux outils apparaissent chaque semaine. Difficile de savoir lesquels comptent pour votre entreprise, et encore plus par où commencer.",
+"pain1":"Trop d’outils et de possibilités en IA","pain2":"Un retour sur investissement flou","pain3":"Des tâches manuelles répétitives qui grignotent la journée","pain4":"Des logiciels qui ne communiquent pas entre eux","pain5":"Des informations difficiles à retrouver","pain6":"Des employés qui déplacent des données à la main d’un système à l’autre","pain7":"Aucune idée par où commencer",
+"p.pull":"La première étape n’est pas de choisir un outil d’IA. <span>C’est de comprendre où l’IA peut créer le plus de valeur.</span>",
+"how.eyebrow":"Comment ça marche","how.h2":"De « par où commencer ? » à un plan clair.","how.lead":"Quatre étapes. Vous répondez à de simples questions sur votre entreprise ; nous faisons l’analyse.",
+"s1t":"Comprendre","s1d":"Nous découvrons votre entreprise, vos processus, vos défis, vos outils et vos objectifs.",
+"s2t":"Identifier","s2d":"Nous repérons où l’IA et l’automatisation peuvent avoir un impact réel.",
+"s3t":"Recommander","s3d":"Nous vous orientons vers la solution la plus adaptée :",
+"s4t":"Construire","s4d":"Nous transformons l’opportunité en une solution concrète que votre équipe peut utiliser.",
+"uc.eyebrow":"Cas d’usage","uc.h2":"Que peut faire l’IA pour votre entreprise ?","uc.lead":"Des façons concrètes dont les équipes mettent l’IA au travail, expliquées simplement.",
+"uc1t":"Support client","uc1d":"Répondre aux questions, rechercher dans les connaissances de l’entreprise, accompagner les clients et transmettre les demandes complexes.",
+"uc2t":"Ventes","uc2d":"Qualifier les prospects, automatiser les relances et aider les équipes commerciales à prioriser les opportunités.",
+"uc3t":"Marketing","uc3d":"Générer du contenu, analyser les campagnes et automatiser les tâches marketing répétitives.",
+"uc4t":"Opérations","uc4d":"Automatiser les processus répétitifs et connecter vos systèmes.",
+"uc5t":"Données et analyse","uc5d":"Analyser vos données et les transformer en informations utiles.",
+"uc6t":"Connaissances internes","uc6d":"Aider vos employés à retrouver rapidement l’information dans les documents et systèmes de l’entreprise.",
+"uc7t":"Agents IA","uc7d":"Laisser l’IA réaliser des tâches en plusieurs étapes et interagir avec vos systèmes, sous le contrôle de votre équipe.",
+"uc8t":"IA sur mesure","uc8d":"Concevoir des solutions IA adaptées aux besoins uniques de votre entreprise.",
+"im.eyebrow":"Imaginez","im.h2":"La même demande. Beaucoup moins d’étapes manuelles.","im.lead":"Voyez ce qui change pour une simple question client quand le travail répétitif est confié à l’IA.",
+"im.manual":"Processus manuel","im.manualPill":"5 étapes manuelles","im.ai":"Processus avec IA","im.aiPill":"Supervision humaine",
+"who.customer":"Client","who.employee":"Employé","who.ai":"IA","who.human":"Humain",
+"m1":"Le client pose une question","m2":"L’employé cherche dans la documentation","m3":"L’employé rédige la réponse","m4":"L’employé met à jour le CRM","m5":"L’employé passe à la tâche suivante",
+"a1":"Le client pose une question","a2":"L’IA comprend la demande","a3":"L’IA consulte les connaissances de l’entreprise","a4":"L’IA répond","a5":"L’IA met à jour le CRM","a6":"Un humain vérifie si nécessaire",
+"out.aria":"Ce qui change","out1":"Moins de travail manuel","out2":"Plus d’automatisation","out3":"Supervision humaine","out4":"Meilleure efficacité","replay":"Rejouer",
+"pers.eyebrow":"Pensé pour vous","pers.h2":"Que pourrait faire l’IA, concrètement, pour votre entreprise ?","pers.lead":"Chaque entreprise est différente. La meilleure solution IA dépend de vos processus, de vos défis, de vos outils, de vos objectifs et du type de travail de votre équipe.",
+"eval.aria":"Ce que la découverte analyse","e1":"Défis de l’entreprise","e2":"Processus actuels","e3":"Logiciels existants","e4":"Tâches manuelles","e5":"Maturité en IA","e6":"Résultats attendus","e7":"Opportunités d’automatisation","e8":"Besoins d’intégration",
+"get.eyebrow":"Ce que vous obtenez","get.h2":"Quelque chose d’utile, pas juste un formulaire.","get.lead":"Vous recevez des résultats personnalisés avant même que nous vous demandions vos coordonnées.",
+"g1t":"Carte des opportunités IA","g1d":"Voyez où l’IA peut avoir le plus d’impact dans votre entreprise.",
+"g2t":"Cas d’usage recommandés","g2d":"Découvrez des opportunités IA concrètes, adaptées à votre façon de travailler.",
+"g3t":"Solution recommandée","g3d":"Découvrez quelle direction vous convient le mieux :",
+"g4t":"Pistes de mise en œuvre","g4d":"Comprenez à quoi pourrait ressembler la suite.",
+"g5t":"Prochaines étapes","g5d":"Un chemin clair, de l’opportunité à la mise en œuvre.",
+"aud.eyebrow":"Pour qui ?","aud.h2":"Conçu pour les entreprises, à tous les stades.",
+"aud1":"Petites entreprises","aud2":"Startups","aud3":"Entreprises en croissance","aud4":"Entreprises établies","aud5":"Équipes qui explorent l’IA","aud6":"Entreprises qui utilisent déjà l’IA","aud7":"Entreprises qui cherchent à automatiser","aud8":"Entreprises qui envisagent une IA sur mesure",
+"aud.lead":"Que vous exploriez l’IA ou l’utilisiez déjà, nous vous aidons à identifier ce qui a du sens pour votre entreprise.",
+"pr.eyebrow":"Notre méthode","pr.h2":"Quatre principes derrière chaque recommandation.",
+"pr1t":"L’entreprise d’abord","pr1d":"Nous partons du problème, pas de la technologie.",
+"pr2t":"L’intégration d’abord","pr2d":"L’IA doit fonctionner avec les outils que votre entreprise utilise déjà.",
+"pr3t":"L’humain dans la boucle","pr3d":"Automatiser ne veut pas dire perdre le contrôle.",
+"pr4t":"Orienté résultats","pr4d":"L’objectif n’est pas d’ajouter de l’IA, mais de créer une valeur mesurable pour l’entreprise.",
+"faq.eyebrow":"FAQ","faq.h2":"Vos questions, nos réponses.",
+"q1":"Ai-je besoin de connaissances techniques ?","an1":"Non. La découverte est conçue pour les professionnels non techniques.",
+"q2":"Combien de temps dure la découverte ?","an2":"Environ 5 à 10 minutes.",
+"q3":"Et si je ne sais pas quelle solution IA il me faut ?","an3":"C’est exactement ce que la découverte vous aide à déterminer.",
+"q4":"L’IA peut-elle fonctionner avec mes logiciels existants ?","an4":"Oui. Les solutions IA peuvent souvent s’intégrer aux outils et systèmes que vous utilisez déjà.",
+"q5":"Pouvez-vous créer des solutions IA sur mesure ?","an5":"Oui. Si les outils existants ne suffisent pas, la recommandation peut s’orienter vers une application IA sur mesure.",
+"q6":"Et si nous ne faisons que commencer à explorer l’IA ?","an6":"Aucun problème. La découverte s’adapte aux entreprises à tous les stades d’adoption de l’IA.",
+"fin.h2":"Vous n’avez pas besoin de savoir précisément quelle IA vous faut.","fin.lead":"Il vous suffit de savoir ce que vous voulez améliorer. Nous vous aidons à identifier les opportunités.","fin.micro":"5 à 10 minutes · Aucune connaissance technique requise",
+"d.close":"Fermer","d.step":"Étape {n} sur {t}","d.about":"Environ 5 à 10 minutes","d.back":"Retour","d.next":"Continuer","d.see":"Voir mes opportunités IA",
+"d.errSingle":"Veuillez choisir une option pour continuer.","d.errMulti":"Veuillez choisir au moins une option pour continuer.",
+"d.notesPh":"Par exemple : nous passons des heures chaque semaine à recopier les commandes de notre boutique dans nos tableurs.","d.notesHint":"Vous pouvez passer cette étape et obtenir quand même vos résultats.",
+"d.analyzing":"Analyse de vos réponses…","d.analyzingSub":"Mise en relation de vos processus et objectifs avec les opportunités IA.",
+"d.resEyebrow":"Vos résultats","d.resH":"Vos opportunités IA personnalisées",
+"d.resSub":"D’après vos réponses, voici les domaines où l’IA a le plus de chances de vous aider, classés selon leur adéquation avec ce que vous nous avez dit.",
+"d.resSubGen":"Vous nous avez dit que vous en êtes encore à explorer : voici donc des points de départ courants pour des entreprises comme la vôtre. Un échange permettra de les affiner.",
+"d.map":"Carte des opportunités IA","d.best":"Meilleure correspondance","d.fit":"Les barres montrent dans quelle mesure chaque domaine correspond à vos réponses. Ce ne sont pas des prévisions d’économies.",
+"d.rec":"Solution recommandée","d.impl":"Pistes de mise en œuvre","d.implIntro":"À quoi pourrait ressembler une première étape :",
+"d.nextT":"Prochaines étapes","d.n1":"Passez ces résultats en revue avec nous pour les confronter à votre réalité.","d.n2":"Choisissez une opportunité pour commencer.","d.n3":"Convenez d’un plan et d’un calendrier réalistes pour une première version.",
+"d.contactT":"Envie de transformer cela en plan d’action ?","d.contactP":"Vos résultats vous appartiennent, sans aucune obligation. Si vous souhaitez les revoir avec nous, laissez vos coordonnées et nous vous contacterons.",
+"d.name":"Votre nom","d.email":"E-mail professionnel","d.company":"Entreprise","d.optional":"(facultatif)","d.send":"Revoir mes résultats avec vous",
+"priv.line":"Nous utilisons vos coordonnées uniquement pour vous contacter au sujet de vos résultats. Nous ne vendons jamais vos données. <a href=\"/privacy\" target=\"_blank\" rel=\"noopener\">Politique de confidentialité</a>",
+"d.thanksT":"Merci","d.thanksP":"Nous avons bien reçu vos coordonnées et reviendrons vers vous.",
+"d.errName":"Veuillez saisir votre nom.","d.errEmail":"Veuillez saisir une adresse e-mail valide.","d.sending":"Envoi en cours…","d.fail":"Une erreur est survenue. Veuillez réessayer dans un instant.",
+"d.restart":"Recommencer","d.backPage":"Retour à la page",
+"step.goals.q":"Que souhaitez-vous que l’IA fasse pour votre entreprise ?","step.goals.s":"Choisissez tout ce qui vous semble utile. Il n’y a pas de mauvaise réponse.",
+"step.goals.o":["Répondre plus vite aux questions des clients","Qualifier les prospects et les relancer automatiquement","Créer du contenu et des rapports marketing","Automatiser les tâches répétitives","Comprendre mes données et en tirer des analyses","Aider mon équipe à retrouver l’information rapidement","Gérer seule des tâches en plusieurs étapes","Quelque chose de spécifique à mon activité","Je ne sais pas encore"],
+"step.industry.q":"Quel type d’entreprise dirigez-vous ?","step.industry.s":"Cela nous aide à garder des recommandations pertinentes.",
+"step.industry.o":["Services professionnels","E-commerce ou commerce de détail","Logiciels ou technologie","Santé ou bien-être","Finance ou assurance","Industrie ou logistique","Éducation ou formation","Autre"],
+"step.size.q":"Quelle est la taille de votre équipe ?","step.size.s":"Une estimation suffit.","step.size.o":["Moi seul(e)","2 à 10 personnes","11 à 50 personnes","51 à 200 personnes","Plus de 200 personnes"],
+"step.challenges.q":"Qu’est-ce qui ralentit le plus votre équipe aujourd’hui ?","step.challenges.s":"Choisissez tout ce qui s’applique.",
+"step.challenges.o":["Trop de travail manuel répétitif","Les clients attendent trop longtemps une réponse","L’information est difficile à retrouver","Nos logiciels ne communiquent pas entre eux","Des prospects nous échappent","Les rapports et les données prennent trop de temps","La création de contenu est lente","Je ne sais pas où l’IA pourrait aider"],
+"step.tools.q":"Quels outils votre équipe utilise-t-elle déjà ?","step.tools.s":"L’IA fonctionne mieux quand elle s’intègre à l’existant.",
+"step.tools.o":["E-mail et agenda","CRM (fichier clients)","Tableurs","Service d’assistance ou chat","Logiciel de comptabilité ou de finance","Outils de gestion de projet","Plateforme e-commerce","Logiciel sur mesure ou interne","Aucun de ces outils pour l’instant"],
+"step.maturity.q":"Où en êtes-vous avec l’IA aujourd’hui ?","step.maturity.s":"Soyez franc : tous les points de départ sont valables.",
+"step.maturity.o":["Nous n’avons pas commencé","Certains d’entre nous testent des outils d’IA à titre personnel","Nous utilisons l’IA dans quelques processus","L’IA fait partie de notre activité principale"],
+"step.outcomes.q":"À quoi ressemblerait la réussite ?","step.outcomes.s":"Choisissez les résultats qui comptent le plus.",
+"step.outcomes.o":["Gagner du temps","Réduire les coûts","Augmenter les ventes","Améliorer l’expérience client","Prendre de meilleures décisions","Découvrir de nouvelles opportunités"],
+"step.notes.q":"Autre chose à nous dire ?","step.notes.s":"Facultatif. Décrivez un processus qui vous frustre, ou un objectif, avec vos propres mots."
+},
+ar:{
+"skip":"انتقل إلى المحتوى","logo.aria":"Dalil AI – الصفحة الرئيسية","nav.aria":"القائمة الرئيسية","lang.aria":"اللغة","foot.aria":"تذييل الصفحة",
+"menu.open":"فتح القائمة","menu.close":"إغلاق القائمة",
+"nav.solutions":"حلول الذكاء الاصطناعي","nav.how":"كيف يعمل","nav.cases":"حالات الاستخدام","nav.about":"من نحن","nav.faq":"الأسئلة الشائعة","nav.cta":"ابدأ الاكتشاف","nav.privacy":"سياسة الخصوصية",
+"meta.title":"استشارات وأتمتة الذكاء الاصطناعي للشركات | ابدأ اكتشاف الذكاء الاصطناعي",
+"meta.desc":"اكتشف أين يمكن للذكاء الاصطناعي والأتمتة والوكلاء الأذكياء أن يوفّروا وقت شركتك ويخفّضوا تكاليفها ويفتحوا لها فرصًا جديدة. اكتشاف يستغرق من 5 إلى 10 دقائق مع توصيات مخصّصة.",
+"meta.ogtitle":"اكتشف أين يمكن للذكاء الاصطناعي أن يصنع فرقًا حقيقيًا في عملك",
+"meta.ogdesc":"اكتشاف للذكاء الاصطناعي من 5 إلى 10 دقائق يحدّد أفضل فرص الذكاء الاصطناعي والأتمتة لشركتك. دون الحاجة إلى معرفة تقنية.",
+"hero.eyebrow":"استشارات وأتمتة الذكاء الاصطناعي",
+"hero.h1":"اكتشف أين يمكن للذكاء الاصطناعي <span class=\"grad\">أن يصنع فرقًا حقيقيًا</span> في عملك.",
+"hero.lead":"أخبرنا كيف تعمل شركتك. سنحدّد لك المواضع التي يمكن للذكاء الاصطناعي والأتمتة والوكلاء الأذكياء أن يوفّروا فيها الوقت، ويخفّضوا التكاليف، ويفتحوا فرصًا جديدة.",
+"cta.primary":"ابدأ اكتشاف الذكاء الاصطناعي لشركتك","cta.discover":"اكتشف فرصي في الذكاء الاصطناعي","cta.find":"اعثر على فرصي في الذكاء الاصطناعي",
+"hero.secondary":"شاهد كيف يعمل","hero.micro":"من 5 إلى 10 دقائق · لا حاجة إلى معرفة تقنية · توصيات مخصّصة لك",
+"journey.aria":"رحلة الاكتشاف","j1":"شركتك","j2":"تحدياتك","j3":"إجراءات عملك","j4":"فرص الذكاء الاصطناعي","j5":"خطتك",
+"scan.aria":"مثال على فحص فرص الذكاء الاصطناعي يعرض دعم العملاء وأتمتة سير العمل وتأهيل العملاء المحتملين وتحليل البيانات، مع ثلاث فرص عالية التأثير. مثال توضيحي فقط.",
+"scan.title":"فحص فرص الذكاء الاصطناعي","scan.example":"مثال","tag.high":"تأثير عالٍ","tag.explore":"تستحق الاستكشاف","scan.complete":"اكتمل الفحص","scan.three":"3 فرص عالية التأثير","scan.view":"اطّلع على فرصك",
+"oppn.support":"دعم العملاء","oppn.sales":"تأهيل العملاء المحتملين والمبيعات","oppn.marketing":"التسويق","oppn.ops":"أتمتة سير العمل","oppn.data":"البيانات والتحليلات","oppn.knowledge":"المعرفة الداخلية","oppn.agents":"وكلاء الذكاء الاصطناعي","oppn.custom":"تطبيق ذكاء اصطناعي مخصّص",
+"oppt.support":"مساعد يجيب عن الأسئلة المتكررة اعتمادًا على معلومات شركتك، ويخدم عملاءك على مدار الساعة، ويحوّل الحالات المعقدة إلى فريقك.",
+"oppt.sales":"تأهيل العملاء المحتملين الجدد تلقائيًا، وإرسال المتابعات في الوقت المناسب، وإظهار من يجب أن يتواصل معه فريق المبيعات أولًا.",
+"oppt.marketing":"صياغة المحتوى، وتلخيص نتائج الحملات، وتولّي المهام التسويقية المتكررة، مع موافقة فريقك على المخرجات.",
+"oppt.ops":"إزالة الأعمال الروتينية المتكررة عن كاهل فريقك، وانسياب المعلومات بين الأدوات التي تستخدمها بالفعل.",
+"oppt.data":"اطرح أسئلتك على بيانات شركتك بلغة بسيطة واحصل على رؤى واضحة دون انتظار تقارير يدوية.",
+"oppt.knowledge":"أتح لموظفيك العثور على الإجابات في المستندات والسياسات والأنظمة خلال ثوانٍ بدل السؤال هنا وهناك.",
+"oppt.agents":"ذكاء اصطناعي ينجز مهام متعددة الخطوات عبر أنظمتك، مثل جمع المعلومات واتخاذ الإجراء ورفع التقرير، مع مراجعة بشرية حيث يلزم.",
+"oppt.custom":"حل ذكاء اصطناعي مصمَّم خصيصًا ليناسب الطريقة الفريدة التي تعمل بها شركتك.",
+"soln.assistant":"مساعد ذكاء اصطناعي","soln.automation":"أتمتة بالذكاء الاصطناعي","soln.agent":"وكيل ذكاء اصطناعي","soln.integration":"دمج الذكاء الاصطناعي","soln.custom":"تطبيق ذكاء اصطناعي مخصّص",
+"sold.assistant":"مساعد يجيب عن الأسئلة اعتمادًا على معلوماتك الخاصة ويعمل إلى جانب فريقك.",
+"sold.automation":"عمليات آلية تزيح الأعمال المتكررة عن فريقك، بينما يبقى القرار بيد الأشخاص.",
+"sold.agent":"وكيل ينجز مهامّ متعددة الخطوات عبر أنظمتك ويرفع تقريره إليك للموافقة.",
+"sold.integration":"ذكاء اصطناعي مدمج في البرامج التي تستخدمها بالفعل، لتعمل أدواتك معًا بدل أن تبقى معزولة.",
+"sold.custom":"حل مصمَّم خصيصًا لمتطلبات لا تلبّيها الأدوات الجاهزة.",
+"sols.assistant":["اختيار المعرفة التي سيعتمد عليها (مستندات، أسئلة شائعة، تذاكر سابقة)","البدء بقناة واحدة، مثل موقعك الإلكتروني أو المحادثة الداخلية","وضع قواعد واضحة لموعد تدخّل الموظف"],
+"sols.automation":["اختيار إجراء متكرر واحد له بداية ونهاية واضحتان","ربط الأدوات المعنية حتى يتوقف نسخ البيانات يدويًا","إضافة خطوة مراجعة بشرية لكل ما هو حساس"],
+"sols.agent":["اختيار مهمة واحدة متعددة الخطوات يكررها فريقك كثيرًا","تحديد ما يمكن للوكيل قراءته وتعديله وما لا يلمسه أبدًا","تشغيله بموافقة بشرية أولًا، ثم توسيع صلاحياته تدريجيًا"],
+"sols.integration":["تحديد الأنظمة التي تحتاج إلى تبادل المعلومات","ربطها بأمان بدءًا من أكثر الفجوات إزعاجًا","إضافة الذكاء الاصطناعي حيث يزيل خطوات يدوية"],
+"sols.custom":["توثيق الإجراء والنتيجة المطلوبة","بناء نموذج أولي للتجربة الأساسية على نطاق صغير","الاختبار مع مستخدمين حقيقيين قبل التوسع"],
+"p.eyebrow":"التحدي الحقيقي","p.h2":"لا تحتاج إلى مزيد من أدوات الذكاء الاصطناعي، بل إلى الفرص المناسبة.",
+"p.lead":"تظهر أدوات جديدة كل أسبوع. من الصعب أن تعرف أيها يهمّ شركتك، والأصعب أن تعرف من أين تبدأ.",
+"pain1":"أدوات وإمكانات كثيرة في الذكاء الاصطناعي","pain2":"عائد غير واضح على الاستثمار","pain3":"أعمال يدوية متكررة تلتهم اليوم","pain4":"برامج غير مترابطة لا تتواصل مع بعضها","pain5":"معلومات يصعب العثور عليها","pain6":"موظفون ينقلون البيانات بين الأنظمة يدويًا","pain7":"حيرة بشأن نقطة البداية",
+"p.pull":"الخطوة الأولى ليست اختيار أداة ذكاء اصطناعي. <span>بل فهم أين يمكن للذكاء الاصطناعي أن يصنع أكبر قيمة.</span>",
+"how.eyebrow":"كيف يعمل","how.h2":"من «من أين أبدأ؟» إلى خطة واضحة.","how.lead":"أربع خطوات. أنت تجيب عن أسئلة بسيطة حول عملك، ونحن نتولى التحليل.",
+"s1t":"نفهم","s1d":"نتعرّف على شركتك وإجراءات عملها وتحدياتها وأدواتها وأهدافها.",
+"s2t":"نحدّد","s2d":"نجد المجالات التي يمكن للذكاء الاصطناعي والأتمتة أن يُحدثا فيها أثرًا حقيقيًا.",
+"s3t":"نوصي","s3d":"نرشدك إلى الاتجاه الأنسب:",
+"s4t":"نبني","s4d":"نحوّل الفرصة إلى حل عملي يستطيع فريقك استخدامه.",
+"uc.eyebrow":"حالات الاستخدام","uc.h2":"ماذا يستطيع الذكاء الاصطناعي أن يفعل لشركتك؟","uc.lead":"طرق عملية تستخدم بها الفرق الذكاء الاصطناعي، بلغة بسيطة.",
+"uc1t":"دعم العملاء","uc1d":"الإجابة عن الأسئلة، والبحث في معرفة الشركة، ومساعدة العملاء، وتصعيد الطلبات المعقدة.",
+"uc2t":"المبيعات","uc2d":"تأهيل العملاء المحتملين، وأتمتة المتابعات، ومساعدة فرق المبيعات على ترتيب أولوية الفرص.",
+"uc3t":"التسويق","uc3d":"إنشاء المحتوى، وتحليل الحملات، وأتمتة المهام التسويقية المتكررة.",
+"uc4t":"العمليات","uc4d":"أتمتة الإجراءات المتكررة وربط أنظمة شركتك.",
+"uc5t":"البيانات والتحليلات","uc5d":"تحليل بيانات الشركة وتحويل المعلومات إلى رؤى مفيدة.",
+"uc6t":"المعرفة الداخلية","uc6d":"مساعدة الموظفين على العثور بسرعة على المعلومات في مستندات الشركة وأنظمتها.",
+"uc7t":"وكلاء الذكاء الاصطناعي","uc7d":"إتاحة الفرصة للذكاء الاصطناعي لتنفيذ مهام متعددة الخطوات والتفاعل مع أنظمة شركتك، وفريقك ممسك بزمام الأمر.",
+"uc8t":"ذكاء اصطناعي مخصّص","uc8d":"بناء حلول ذكاء اصطناعي تناسب متطلبات شركتك الفريدة.",
+"im.eyebrow":"تخيّل","im.h2":"الطلب نفسه، وخطوات يدوية أقل بكثير.","im.lead":"شاهد ما يحدث لسؤال عميل واحد عندما تُسند الأعمال المتكررة إلى الذكاء الاصطناعي.",
+"im.manual":"الإجراء اليدوي","im.manualPill":"5 خطوات يدوية","im.ai":"الإجراء بالذكاء الاصطناعي","im.aiPill":"إشراف بشري",
+"who.customer":"العميل","who.employee":"الموظف","who.ai":"الذكاء الاصطناعي","who.human":"إنسان",
+"m1":"العميل يطرح سؤالًا","m2":"الموظف يبحث في الوثائق","m3":"الموظف يكتب الرد","m4":"الموظف يحدّث نظام إدارة العملاء","m5":"الموظف ينتقل إلى المهمة التالية",
+"a1":"العميل يطرح سؤالًا","a2":"الذكاء الاصطناعي يفهم الطلب","a3":"الذكاء الاصطناعي يبحث في معرفة الشركة","a4":"الذكاء الاصطناعي يرد","a5":"الذكاء الاصطناعي يحدّث نظام إدارة العملاء","a6":"إنسان يراجع عند الحاجة",
+"out.aria":"ما الذي يتغيّر","out1":"عمل يدوي أقل","out2":"أتمتة أكثر","out3":"إشراف بشري","out4":"كفاءة أفضل","replay":"أعد التشغيل",
+"pers.eyebrow":"مصمَّم لك","pers.h2":"ماذا يمكن للذكاء الاصطناعي أن يفعل تحديدًا لشركتك؟","pers.lead":"كل شركة مختلفة. وأفضل حل للذكاء الاصطناعي يعتمد على إجراءات عملك وتحدياتك وأدواتك وأهدافك ونوع العمل الذي يؤديه فريقك.",
+"eval.aria":"ما الذي يدرسه الاكتشاف","e1":"تحديات الشركة","e2":"إجراءات العمل الحالية","e3":"البرامج المستخدمة","e4":"الأعمال اليدوية","e5":"مستوى نضج الذكاء الاصطناعي","e6":"النتائج المرجوّة","e7":"فرص الأتمتة","e8":"متطلبات الربط والدمج",
+"get.eyebrow":"ماذا ستحصل عليه","get.h2":"شيء مفيد حقًا، وليس مجرد نموذج.","get.lead":"تحصل على نتائج مخصّصة قبل أن نطلب منك أي بيانات تواصل.",
+"g1t":"خريطة فرص الذكاء الاصطناعي","g1d":"اعرف أين يمكن للذكاء الاصطناعي أن يصنع أكبر أثر في شركتك.",
+"g2t":"حالات الاستخدام الموصى بها","g2d":"اكتشف فرصًا عملية تناسب طريقة عملك.",
+"g3t":"الحل الموصى به","g3d":"تعرّف على الاتجاه الأنسب لك:",
+"g4t":"اتجاه التنفيذ","g4d":"افهم كيف يمكن أن تبدو الخطوة التالية.",
+"g5t":"الخطوات التالية","g5d":"طريق واضح من الفرصة إلى التنفيذ.",
+"aud.eyebrow":"لمن هذه الخدمة؟","aud.h2":"مصمَّمة للشركات في كل مرحلة.",
+"aud1":"الشركات الصغيرة","aud2":"الشركات الناشئة","aud3":"الشركات النامية","aud4":"الشركات الراسخة","aud5":"الفرق التي تستكشف الذكاء الاصطناعي","aud6":"الشركات التي تستخدم الذكاء الاصطناعي بالفعل","aud7":"الشركات الباحثة عن الأتمتة","aud8":"الشركات التي تفكّر في حلول مخصّصة",
+"aud.lead":"سواء كنت تستكشف الذكاء الاصطناعي للتو أو تستخدمه بالفعل، سنساعدك على تحديد ما يناسب شركتك.",
+"pr.eyebrow":"كيف نعمل","pr.h2":"أربعة مبادئ وراء كل توصية.",
+"pr1t":"العمل أولًا","pr1d":"نبدأ بالمشكلة لا بالتقنية.",
+"pr2t":"التكامل أولًا","pr2d":"يجب أن يعمل الذكاء الاصطناعي مع الأدوات التي تستخدمها شركتك بالفعل.",
+"pr3t":"الإنسان في الحلقة","pr3d":"الأتمتة لا تعني فقدان السيطرة.",
+"pr4t":"التركيز على النتائج","pr4d":"الهدف ليس إضافة الذكاء الاصطناعي، بل خلق قيمة قابلة للقياس للشركة.",
+"faq.eyebrow":"الأسئلة الشائعة","faq.h2":"أسئلتكم وإجاباتنا.",
+"q1":"هل أحتاج إلى معرفة تقنية؟","an1":"لا. صُمّم الاكتشاف لأصحاب الأعمال والمستخدمين غير التقنيين.",
+"q2":"كم يستغرق الاكتشاف؟","an2":"من 5 إلى 10 دقائق تقريبًا.",
+"q3":"ماذا لو لم أعرف أي حل للذكاء الاصطناعي أحتاج؟","an3":"هذا بالضبط ما صُمّم الاكتشاف لمساعدتك على تحديده.",
+"q4":"هل يعمل الذكاء الاصطناعي مع برامجي الحالية؟","an4":"نعم. يمكن غالبًا دمج حلول الذكاء الاصطناعي مع الأدوات والأنظمة التي تستخدمها شركتك.",
+"q5":"هل تبنون حلول ذكاء اصطناعي مخصّصة؟","an5":"نعم. إذا لم تكفِ الأدوات الموجودة، فقد تتجه التوصية نحو تطبيق ذكاء اصطناعي مخصّص.",
+"q6":"ماذا لو كنا في بداية استكشاف الذكاء الاصطناعي فقط؟","an6":"لا مشكلة إطلاقًا. يناسب الاكتشاف الشركات في مختلف مراحل تبنّي الذكاء الاصطناعي.",
+"fin.h2":"لست مضطرًا إلى معرفة نوع الذكاء الاصطناعي الذي تحتاجه بالضبط.","fin.lead":"يكفي أن تعرف ما الذي تريد تحسينه، ونحن نساعدك على تحديد الفرص.","fin.micro":"من 5 إلى 10 دقائق · لا حاجة إلى معرفة تقنية",
+"d.close":"إغلاق","d.step":"الخطوة {n} من {t}","d.about":"من 5 إلى 10 دقائق تقريبًا","d.back":"رجوع","d.next":"متابعة","d.see":"اعرض فرصي في الذكاء الاصطناعي",
+"d.errSingle":"يرجى اختيار خيار واحد للمتابعة.","d.errMulti":"يرجى اختيار خيار واحد على الأقل للمتابعة.",
+"d.notesPh":"مثال: نقضي ساعات كل أسبوع في نسخ تفاصيل الطلبات من متجرنا إلى جداولنا.","d.notesHint":"يمكنك تخطي هذه الخطوة وستحصل على نتائجك رغم ذلك.",
+"d.analyzing":"جارٍ تحليل إجاباتك…","d.analyzingSub":"نطابق إجراءات عملك وأهدافك مع فرص الذكاء الاصطناعي.",
+"d.resEyebrow":"نتائجك","d.resH":"فرصك المخصّصة في الذكاء الاصطناعي",
+"d.resSub":"بناءً على إجاباتك، هذه هي المجالات التي يرجَّح أن يفيدك فيها الذكاء الاصطناعي أكثر، مرتَّبة حسب مدى تطابقها مع ما أخبرتنا به.",
+"d.resSubGen":"أخبرتنا أنك ما زلت في مرحلة الاستكشاف، لذلك نعرض عليك نقاط انطلاق شائعة للشركات المشابهة لشركتك. وسيساعد حوار معنا على تدقيقها.",
+"d.map":"خريطة فرص الذكاء الاصطناعي","d.best":"الأنسب","d.fit":"تُظهر الأشرطة مدى تطابق كل مجال مع إجاباتك. وهي ليست توقعات للوفورات.",
+"d.rec":"الحل الموصى به","d.impl":"اتجاه التنفيذ","d.implIntro":"كيف يمكن أن تبدو الخطوة الأولى:",
+"d.nextT":"الخطوات التالية","d.n1":"ناقش هذه النتائج معنا لنتحقق منها بما يوافق واقع عملك.","d.n2":"اختر فرصة واحدة للبدء بها.","d.n3":"اتفق معنا على خطة وجدول زمني عمليين لنسخة أولى.",
+"d.contactT":"هل تريد تحويل هذا إلى خطة؟","d.contactP":"نتائجك لك، ولا يُطلب منك أي شيء. وإن رغبت في مراجعتها معنا، فاترك بياناتك وسنتواصل معك.",
+"d.name":"اسمك","d.email":"البريد الإلكتروني للعمل","d.company":"الشركة","d.optional":"(اختياري)","d.send":"راجعوا نتائجي معي",
+"priv.line":"نستخدم بياناتك فقط للتواصل معك بشأن نتائجك، ولا نبيع بياناتك أبدًا. <a href=\"/privacy\" target=\"_blank\" rel=\"noopener\">سياسة الخصوصية</a>",
+"d.thanksT":"شكرًا لك","d.thanksP":"استلمنا بياناتك وسنتواصل معك قريبًا.",
+"d.errName":"يرجى إدخال اسمك.","d.errEmail":"يرجى إدخال بريد إلكتروني صحيح.","d.sending":"جارٍ الإرسال…","d.fail":"حدث خطأ ما. يرجى المحاولة مرة أخرى بعد قليل.",
+"d.restart":"ابدأ من جديد","d.backPage":"العودة إلى الصفحة",
+"step.goals.q":"ماذا تريد من الذكاء الاصطناعي أن يفعل لشركتك؟","step.goals.s":"اختر كل ما يبدو مفيدًا لك. لا توجد إجابات خاطئة.",
+"step.goals.o":["الإجابة عن أسئلة العملاء بسرعة أكبر","تأهيل العملاء المحتملين ومتابعتهم تلقائيًا","إنشاء محتوى وتقارير تسويقية","أتمتة المهام المتكررة","فهم بياناتي واستخلاص رؤى منها","مساعدة فريقي على إيجاد المعلومات بسرعة","تنفيذ مهام متعددة الخطوات بشكل مستقل","شيء خاص بطبيعة عملي","لست متأكدًا بعد"],
+"step.industry.q":"ما نوع نشاطك التجاري؟","step.industry.s":"يساعدنا هذا على إبقاء التوصيات ملائمة لك.",
+"step.industry.o":["خدمات مهنية","تجارة إلكترونية أو تجزئة","برمجيات أو تكنولوجيا","الصحة أو العناية بالعافية","التمويل أو التأمين","التصنيع أو الخدمات اللوجستية","التعليم أو التدريب","نشاط آخر"],
+"step.size.q":"ما حجم فريقك؟","step.size.s":"يكفي تقدير تقريبي.","step.size.o":["أنا وحدي","من 2 إلى 10 أشخاص","من 11 إلى 50 شخصًا","من 51 إلى 200 شخص","أكثر من 200 شخص"],
+"step.challenges.q":"ما أكثر ما يبطّئ فريقك اليوم؟","step.challenges.s":"اختر كل ما ينطبق.",
+"step.challenges.o":["أعمال يدوية متكررة أكثر من اللازم","العملاء ينتظرون الرد طويلًا","يصعب العثور على المعلومات","برامجنا لا ترتبط ببعضها","عملاء محتملون يضيعون منا","التقارير والبيانات تستغرق وقتًا طويلًا","إنشاء المحتوى بطيء","لا أعرف أين يمكن للذكاء الاصطناعي أن يساعد"],
+"step.tools.q":"ما الأدوات التي يستخدمها فريقك بالفعل؟","step.tools.s":"يعمل الذكاء الاصطناعي بأفضل شكل حين ينسجم مع ما لديك.",
+"step.tools.o":["البريد الإلكتروني والتقويم","نظام إدارة العملاء (CRM)","جداول البيانات","خدمة الدعم أو الدردشة","برامج المحاسبة أو المالية","أدوات إدارة المشاريع","منصة تجارة إلكترونية","برنامج مخصّص أو داخلي","لا شيء من ذلك حتى الآن"],
+"step.maturity.q":"أين أنتم من الذكاء الاصطناعي اليوم؟","step.maturity.s":"كن صريحًا، فكل نقطة بداية مقبولة.",
+"step.maturity.o":["لم نبدأ بعد","يجرّب بعضنا أدوات الذكاء الاصطناعي بشكل شخصي","نستخدم الذكاء الاصطناعي في بعض إجراءات العمل","الذكاء الاصطناعي جزء من عملياتنا الأساسية"],
+"step.outcomes.q":"كيف سيبدو النجاح؟","step.outcomes.s":"اختر النتائج الأهم بالنسبة لك.",
+"step.outcomes.o":["توفير الوقت","خفض التكاليف","زيادة المبيعات","تحسين تجربة العملاء","اتخاذ قرارات أفضل","اكتشاف فرص جديدة"],
+"step.notes.q":"هل هناك ما تود إخبارنا به؟","step.notes.s":"اختياري. صِف إجراءً يزعجك أو هدفًا لديك بكلماتك."
+}
+};
+</script>
+
 <script>
 (function(){
   document.body.classList.remove('no-js');
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var LANGS = ['en','fr','ar'], LANG = 'en';
+
+  /* ---------- i18n ---------- */
+  function T(k){ var v = DICT[LANG] && DICT[LANG][k]; return v === undefined ? DICT.en[k] : v; }
+  function t(k, vars){ var s = T(k); if(typeof s === 'string' && vars){ for(var n in vars){ s = s.replace('{'+n+'}', vars[n]); } } return s; }
+  function pickLang(){
+    var q = (location.search.match(/[?&]lang=(en|fr|ar)/)||[])[1];
+    if(q) return q;
+    try{ var s = localStorage.getItem('dalil-lang'); if(s && LANGS.indexOf(s) > -1) return s; }catch(e){}
+    var n = (navigator.language || 'en').toLowerCase().slice(0,2);
+    return LANGS.indexOf(n) > -1 ? n : 'en';
+  }
+  var onLangChange = function(){};
+  function applyLang(l, persist){
+    LANG = l;
+    var h = document.documentElement; h.lang = l; h.dir = l === 'ar' ? 'rtl' : 'ltr';
+    document.querySelectorAll('[data-i18n]').forEach(function(e){ e.textContent = T(e.getAttribute('data-i18n')); });
+    document.querySelectorAll('[data-i18n-html]').forEach(function(e){ e.innerHTML = T(e.getAttribute('data-i18n-html')); });
+    document.querySelectorAll('[data-i18n-attr]').forEach(function(e){
+      e.getAttribute('data-i18n-attr').split(';').forEach(function(p){ var a = p.split(':'); e.setAttribute(a[0], T(a[1])); });
+    });
+    document.title = T('meta.title');
+    [['meta[name=description]','meta.desc'],['meta[property="og:title"]','meta.ogtitle'],['meta[property="og:description"]','meta.ogdesc']].forEach(function(m){
+      var el = document.querySelector(m[0]); if(el) el.setAttribute('content', T(m[1]));
+    });
+    document.querySelectorAll('.lang button').forEach(function(b){ b.setAttribute('aria-pressed', b.getAttribute('data-lang') === l ? 'true' : 'false'); });
+    var mb = document.getElementById('menuBtn');
+    mb.setAttribute('aria-label', t(mb.getAttribute('aria-expanded') === 'true' ? 'menu.close' : 'menu.open'));
+    if(persist){ try{ localStorage.setItem('dalil-lang', l); }catch(e){} }
+    onLangChange();
+  }
+  document.querySelectorAll('.lang button').forEach(function(b){
+    b.addEventListener('click', function(){ applyLang(b.getAttribute('data-lang'), true); });
+  });
   document.getElementById('yr').textContent = new Date().getFullYear();
 
-  // header + mobile CTA
+  /* ---------- page behaviour ---------- */
   var header = document.getElementById('top'), mcta = document.getElementById('mcta'), hero = document.querySelector('.hero .cta-row');
   function onScroll(){
     header.classList.toggle('scrolled', window.scrollY > 8);
-    if(hero){ var b = hero.getBoundingClientRect().bottom; mcta.classList.toggle('show', b < 0); }
+    if(hero){ mcta.classList.toggle('show', hero.getBoundingClientRect().bottom < 0); }
   }
   window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
 
-  // mobile menu
   var btn = document.getElementById('menuBtn'), menu = document.getElementById('menu');
-  function setMenu(open){ menu.classList.toggle('open', open); btn.setAttribute('aria-expanded', open); btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu'); }
+  function setMenu(open){ menu.classList.toggle('open', open); btn.setAttribute('aria-expanded', open); btn.setAttribute('aria-label', t(open ? 'menu.close' : 'menu.open')); }
   btn.addEventListener('click', function(){ setMenu(btn.getAttribute('aria-expanded') !== 'true'); });
   menu.addEventListener('click', function(e){ if(e.target.closest('a')) setMenu(false); });
   document.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ setMenu(false); } });
 
-  // reveal
   var rv = document.querySelectorAll('.rv');
   if(!('IntersectionObserver' in window) || reduce){ rv.forEach(function(e){ e.classList.add('in'); }); document.getElementById('scan').classList.add('go'); }
   else {
@@ -635,13 +1048,11 @@ textarea.d-field{min-height:130px;resize:vertical}
     setTimeout(function(){ document.getElementById('scan').classList.add('go'); }, 400);
   }
 
-  // workflow animation
   var compare = document.getElementById('compare'), steps = compare.querySelectorAll('.fstep'), timers = [];
   function play(){
     timers.forEach(clearTimeout); timers = [];
     steps.forEach(function(s){ s.classList.remove('on'); });
-    var cols = compare.querySelectorAll('ol');
-    cols.forEach(function(col, c){
+    compare.querySelectorAll('ol').forEach(function(col, c){
       col.querySelectorAll('.fstep').forEach(function(s, i){
         timers.push(setTimeout(function(){ s.classList.add('on'); }, (i*520) + (c*260) + 200));
       });
@@ -652,65 +1063,32 @@ textarea.d-field{min-height:130px;resize:vertical}
     var seen = false;
     new IntersectionObserver(function(es, o){ if(es[0].isIntersecting && !seen){ seen = true; play(); o.disconnect(); } }, {threshold:.3}).observe(compare);
   }
-  document.getElementById('replay').addEventListener('click', function(){ if(reduce){ return; } play(); });
-})();
+  document.getElementById('replay').addEventListener('click', function(){ if(!reduce){ play(); } });
 
-/* ===== AI DISCOVERY ===== */
-(function(){
-  // Where the optional "talk to us" form is sent. Leave empty to fall back to the visitor's email app.
-  var DISCOVERY_ENDPOINT = 'https://script.google.com/macros/s/AKfycbx0WIs4jCv1CTTPrF1TyyxKpTOJKV1MxMVGQ2foEQvaZCkRM5UuRxxbiZp5XZ4Jpzuv/exec';
-  var CONTACT_EMAIL = 'issam.dvl@gmail.com';
+  /* ---------- AI DISCOVERY ---------- */
+  // Where the visitor's results + contact details are sent (e.g. a Google Apps Script web app URL).
+  // Leave empty to fall back to the visitor's email app.
+  var DISCOVERY_ENDPOINT = '';
+  var CONTACT_EMAIL = '';
 
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var D = document.getElementById('discovery'), body = document.getElementById('dBody'),
       bar = document.getElementById('dBar'), lbl = document.getElementById('dStepLbl'),
       prog = document.getElementById('dProg'), scroller = document.getElementById('dScroll');
   var bg = ['header','main','footer','#mcta'].map(function(s){ return document.querySelector(s); });
 
-  var OPP = {
-    support:{n:'Customer Support',t:'An assistant that answers common questions from your own knowledge, helps your customers around the clock, and hands complex cases to your team.'},
-    sales:{n:'Lead Qualification & Sales',t:'Automatically qualify new leads, send timely follow-ups, and show your sales team who to talk to first.'},
-    marketing:{n:'Marketing',t:'Draft content, summarize campaign results and take over repetitive marketing tasks, with your team approving the output.'},
-    ops:{n:'Workflow Automation',t:'Take repetitive, rule-based work off your team and keep information flowing between the tools you already use.'},
-    data:{n:'Data & Analytics',t:'Ask questions of your business data in plain language and get clear insights without waiting on manual reports.'},
-    knowledge:{n:'Internal Knowledge',t:'Let employees find answers across documents, policies and systems in seconds instead of asking around.'},
-    agents:{n:'AI Agents',t:'AI that completes multi-step tasks across your systems, such as gathering information, taking action and reporting back, with human review where it matters.'},
-    custom:{n:'Custom AI Application',t:'A purpose-built AI solution shaped around the way your business uniquely works.'}
-  };
   var ORDER = ['ops','support','knowledge','sales','data','marketing','agents','custom'];
-
+  // Scoring only. All visible text comes from DICT.
   var STEPS = [
-    {id:'goals',type:'multi',q:'What would you like AI to do for your business?',s:'Choose everything that sounds useful. There are no wrong answers.',o:[
-      ['Answer customer questions faster',{support:3,knowledge:1}],
-      ['Qualify leads and follow up automatically',{sales:3}],
-      ['Create marketing content and reports',{marketing:3}],
-      ['Automate repetitive tasks',{ops:3}],
-      ['Understand my data and get insights',{data:3}],
-      ['Help my team find information quickly',{knowledge:3}],
-      ['Handle multi-step tasks on its own',{agents:3,ops:1}],
-      ['Something specific to my business',{custom:3}],
-      ["I'm not sure yet",{}]]},
-    {id:'industry',type:'single',q:'What kind of business do you run?',s:'This helps us keep the recommendations relevant.',o:[
-      ['Professional services'],['E-commerce or retail'],['Software or technology'],['Healthcare or wellness'],['Finance or insurance'],['Manufacturing or logistics'],['Education or training'],['Something else']]},
-    {id:'size',type:'single',q:'How big is your team?',s:'Roughly is fine.',o:[
-      ['Just me'],['2–10 people'],['11–50 people'],['51–200 people'],['More than 200']]},
-    {id:'challenges',type:'multi',q:'What slows your team down most today?',s:'Choose all that apply.',o:[
-      ['Too much repetitive manual work',{ops:2}],
-      ['Customers wait too long for answers',{support:2}],
-      ['Information is hard to find',{knowledge:2}],
-      ["Our software tools don't connect",{ops:1,_int:2}],
-      ['Leads fall through the cracks',{sales:2}],
-      ['Reports and data take too long',{data:2}],
-      ['Creating content is slow',{marketing:2}],
-      ["I'm not sure where AI would help",{}]]},
-    {id:'tools',type:'multi',q:'Which tools does your team already use?',s:'AI works best when it fits into what you have.',o:[
-      ['Email and calendar',{}],['CRM (customer records)',{sales:1}],['Spreadsheets',{data:1}],['Help desk or chat support',{support:1}],['Accounting or finance software',{}],['Project management tools',{ops:1}],['E-commerce platform',{}],['Custom or in-house software',{custom:1,_int:1}],['None of these yet',{}]]},
-    {id:'maturity',type:'single',q:'Where are you with AI today?',s:'Be honest. Every starting point is fine.',o:[
-      ["We haven't started"],['Some of us try AI tools personally'],['We use AI in a few workflows'],['AI is part of our core operations']]},
-    {id:'outcomes',type:'multi',q:'What would success look like?',s:'Choose the outcomes that matter most.',o:[
-      ['Save time',{ops:1}],['Reduce costs',{ops:1}],['Increase sales',{sales:1}],['Improve customer experience',{support:1}],['Make better decisions',{data:1}],['Discover new opportunities',{agents:1}]]},
-    {id:'notes',type:'text',q:'Anything else we should know?',s:'Optional. Describe a process that frustrates you, or a goal in your own words.'}
+    {id:'goals',type:'multi',w:[{support:3,knowledge:1},{sales:3},{marketing:3},{ops:3},{data:3},{knowledge:3},{agents:3,ops:1},{custom:3},{}]},
+    {id:'industry',type:'single'},
+    {id:'size',type:'single'},
+    {id:'challenges',type:'multi',w:[{ops:2},{support:2},{knowledge:2},{ops:1,_int:2},{sales:2},{data:2},{marketing:2},{}]},
+    {id:'tools',type:'multi',w:[{},{sales:1},{data:1},{support:1},{},{ops:1},{},{custom:1,_int:1},{}]},
+    {id:'maturity',type:'single'},
+    {id:'outcomes',type:'multi',w:[{ops:1},{ops:1},{sales:1},{support:1},{data:1},{agents:1}]},
+    {id:'notes',type:'text'}
   ];
+  var AGENT_OPTION = 6; // "Handle multi-step tasks on its own"
 
   var st = {i:0,a:{},done:false,result:null,sent:false};
   var lastFocus = null;
@@ -735,41 +1113,39 @@ textarea.d-field{min-height:130px;resize:vertical}
 
   function render(){
     if(st.done){ return renderResult(); }
-    var s = STEPS[st.i], n = STEPS.length;
+    var s = STEPS[st.i], n = STEPS.length, k = 'step.'+s.id;
     prog.hidden = false;
-    lbl.textContent = 'Step '+(st.i+1)+' of '+n;
+    lbl.textContent = t('d.step',{n:st.i+1,t:n});
     bar.style.width = ((st.i)/n*100 + 100/n*0.5)+'%';
-    var h = '<h2 id="dTitle">'+esc(s.q)+'</h2><p class="d-sub">'+esc(s.s)+'</p><form id="dForm" novalidate>';
+    var h = '<h2 id="dTitle">'+esc(T(k+'.q'))+'</h2><p class="d-sub">'+esc(T(k+'.s'))+'</p><form id="dForm" novalidate>';
     if(s.type==='text'){
-      h += '<label class="sr" style="position:absolute;left:-999px" for="dNotes">'+esc(s.q)+'</label><textarea class="d-field" id="dNotes" maxlength="800" placeholder="For example: we spend hours every week copying order details between our shop and our spreadsheets.">'+esc(st.a.notes||'')+'</textarea><p class="d-hint">Skip this if you like. You can still get your results.</p>';
+      h += '<label class="sr" for="dNotes">'+esc(T(k+'.q'))+'</label><textarea class="d-field" id="dNotes" maxlength="800" placeholder="'+esc(t('d.notesPh'))+'">'+esc(st.a.notes||'')+'</textarea><p class="d-hint">'+esc(t('d.notesHint'))+'</p>';
     } else {
-      h += '<fieldset><legend class="sr" style="position:absolute;left:-999px">'+esc(s.q)+'</legend><div class="d-opts">';
+      h += '<fieldset><legend class="sr">'+esc(T(k+'.q'))+'</legend><div class="d-opts">';
       var cur = st.a[s.id]||[];
-      s.o.forEach(function(o,idx){
+      T(k+'.o').forEach(function(label,idx){
         var chk = cur.indexOf(idx)>-1 ? ' checked':'';
-        h += '<label class="opt'+(s.type==='single'?' radio':'')+'"><input type="'+(s.type==='single'?'radio':'checkbox')+'" name="o" value="'+idx+'"'+chk+'><span>'+esc(o[0])+'</span></label>';
+        h += '<label class="opt'+(s.type==='single'?' radio':'')+'"><input type="'+(s.type==='single'?'radio':'checkbox')+'" name="o" value="'+idx+'"'+chk+'><span>'+esc(label)+'</span></label>';
       });
       h += '</div></fieldset>';
     }
     h += '<p class="d-err" id="dErr" role="alert"></p><div class="d-nav">'+
-      (st.i>0?'<button type="button" class="btn btn-ghost" id="dBack">← Back</button>':'<span></span>')+
-      '<button type="submit" class="btn btn-primary">'+(st.i===n-1?'See My AI Opportunities →':'Continue →')+'</button></div></form>';
+      (st.i>0?'<button type="button" class="btn btn-ghost" id="dBack"><span class="arr back" aria-hidden="true"></span> '+esc(t('d.back'))+'</button>':'<span></span>')+
+      '<button type="submit" class="btn btn-primary">'+esc(t(st.i===n-1?'d.see':'d.next'))+' <span class="arr" aria-hidden="true"></span></button></div></form>';
     body.innerHTML = h;
-    var f = document.getElementById('dForm');
-    f.addEventListener('submit', function(e){ e.preventDefault(); next(s); });
+    document.getElementById('dForm').addEventListener('submit', function(e){ e.preventDefault(); next(s); });
     var b = document.getElementById('dBack'); if(b){ b.addEventListener('click', function(){ save(s); st.i--; render(); focusHead(); }); }
-    // single choice: auto-advance feel is skipped intentionally (keeps control with the visitor)
   }
 
   function save(s){
-    if(s.type==='text'){ var t = document.getElementById('dNotes'); st.a.notes = t ? t.value.trim() : ''; return; }
+    if(s.type==='text'){ var tx = document.getElementById('dNotes'); if(tx) st.a.notes = tx.value.trim(); return; }
     var v = []; body.querySelectorAll('input[name=o]:checked').forEach(function(i){ v.push(+i.value); });
     st.a[s.id] = v;
   }
   function next(s){
     save(s);
     if(s.type!=='text' && !(st.a[s.id]||[]).length){
-      document.getElementById('dErr').textContent = s.type==='single' ? 'Please choose one option to continue.' : 'Please choose at least one option to continue.';
+      document.getElementById('dErr').textContent = t(s.type==='single' ? 'd.errSingle' : 'd.errMulti');
       return;
     }
     if(st.i < STEPS.length-1){ st.i++; render(); focusHead(); }
@@ -779,62 +1155,53 @@ textarea.d-field{min-height:130px;resize:vertical}
   function compute(){
     var sc = {}, flag = {_int:0}; ORDER.forEach(function(k){ sc[k]=0; });
     STEPS.forEach(function(s){
-      if(s.type==='text') return;
+      if(!s.w) return;
       (st.a[s.id]||[]).forEach(function(i){
-        var w = s.o[i][1]||{};
+        var w = s.w[i]||{};
         for(var k in w){ if(k.charAt(0)==='_'){ flag[k]+=w[k]; } else { sc[k]+=w[k]; } }
       });
     });
     var ranked = ORDER.slice().sort(function(a,b){ return sc[b]-sc[a] || ORDER.indexOf(a)-ORDER.indexOf(b); });
-    var top = ranked.slice(0,3), max = sc[top[0]] || 1, general = sc[top[0]]===0;
-    var sol;
-    var multi = (st.a.goals||[]).some(function(i){ return STEPS[0].o[i][0].indexOf('multi-step')>-1; });
+    var top = ranked.slice(0,3), max = sc[top[0]] || 1, general = sc[top[0]]===0, sol;
+    var multi = (st.a.goals||[]).indexOf(AGENT_OPTION) > -1;
     if(sc.custom>=3 && sc.custom>=sc[top[0]]){ sol = 'custom'; }
-    else if(multi || (sc.agents>=3)){ sol = 'agent'; }
+    else if(multi || sc.agents>=3){ sol = 'agent'; }
     else if(flag._int>=2){ sol = 'integration'; }
     else if(top[0]==='support' || top[0]==='knowledge'){ sol = 'assistant'; }
     else { sol = 'automation'; }
     return {top:top,sc:sc,max:max,sol:sol,general:general};
   }
 
-  var SOL = {
-    assistant:['AI Assistant','An assistant that answers questions from your own information and works alongside your team.',['Choose the knowledge it should use (documents, FAQs, past tickets)','Start with one channel, such as your website or internal chat','Set clear rules for when a person takes over']],
-    automation:['AI Automation','Automations that take repetitive work off your team while people stay in control of decisions.',['Pick one repetitive workflow with clear start and end points','Connect the tools involved so data stops being copied by hand','Add a human review step for anything sensitive']],
-    agent:['AI Agent','An agent that completes multi-step tasks across your systems and reports back for approval.',['Choose one multi-step task your team repeats often','Define what the agent can read, change and never touch','Run it with human approval first, then widen its freedom']],
-    integration:['AI Integration','AI built into the software you already use, so your tools work together instead of in silos.',['Map which systems need to share information','Connect them securely, starting with the most painful gap','Add AI on top where it removes manual steps']],
-    custom:['Custom AI Application','A purpose-built solution designed around requirements that off-the-shelf tools don\'t meet.',['Document the process and the outcome you need','Prototype the core experience on a small scale','Test with real users before expanding']]
-  };
-
   function analyzing(){
     prog.hidden = true;
-    body.innerHTML = '<div class="d-think" role="status"><div class="d-orb" aria-hidden="true"></div><h2 id="dTitle">Analyzing your answers…</h2><p class="d-sub">Matching your workflows and goals to AI opportunities.</p></div>';
+    body.innerHTML = '<div class="d-think" role="status"><div class="d-orb" aria-hidden="true"></div><h2 id="dTitle">'+esc(t('d.analyzing'))+'</h2><p class="d-sub">'+esc(t('d.analyzingSub'))+'</p></div>';
     focusHead();
-    setTimeout(function(){ if(!D.hidden){ renderResult(); } }, reduce ? 0 : 1300);
+    setTimeout(function(){ if(!D.hidden && st.done){ renderResult(); } }, reduce ? 0 : 1300);
   }
 
   function renderResult(){
-    var r = st.result || (st.result = compute()), sol = SOL[r.sol];
+    var r = st.result || (st.result = compute());
     prog.hidden = true;
-    var h = '<div class="res-head"><span class="eyebrow">Your results</span><h2 id="dTitle" style="margin-top:14px">Your personalized AI opportunities</h2><p class="d-sub">'+
-      (r.general ? 'You told us you\'re still exploring, so here are common starting points for businesses like yours. A conversation will sharpen them.' : 'Based on your answers, these are the areas where AI is most likely to help. Ranked by how well they match what you told us.')+'</p></div>';
-    h += '<section class="res-card" aria-labelledby="r1"><h3 id="r1">AI Opportunity Map</h3>';
+    var h = '<div class="res-head"><span class="eyebrow">'+esc(t('d.resEyebrow'))+'</span><h2 id="dTitle" style="margin-top:14px">'+esc(t('d.resH'))+'</h2><p class="d-sub">'+esc(t(r.general?'d.resSubGen':'d.resSub'))+'</p></div>';
+    h += '<section class="res-card" aria-labelledby="r1"><h3 id="r1">'+esc(t('d.map'))+'</h3>';
     r.top.forEach(function(k,i){
       var pct = r.general ? 60-i*8 : Math.max(28, Math.round(r.sc[k]/r.max*100) - i*2);
-      h += '<div class="o-item"><div class="o-row"><strong>'+esc(OPP[k].n)+'</strong><span class="o-rank">'+(i===0?'Best match':'#'+(i+1))+'</span></div><div class="bar" aria-hidden="true"><b style="--w:'+pct+'%;width:'+(reduce?pct+'%':'0')+'"></b></div><p>'+esc(OPP[k].t)+'</p></div>';
+      h += '<div class="o-item"><div class="o-row"><strong>'+esc(T('oppn.'+k))+'</strong><span class="o-rank">'+(i===0?esc(t('d.best')):'#'+(i+1))+'</span></div><div class="bar" aria-hidden="true"><b style="--w:'+pct+'%;width:'+(reduce?pct+'%':'0')+'"></b></div><p>'+esc(T('oppt.'+k))+'</p></div>';
     });
-    h += '<p class="o-fit">Bars show how closely each area matches your answers. They are not predictions of savings.</p></section>';
-    h += '<section class="res-card sol" aria-labelledby="r2"><h3 id="r2" style="color:#9aa4d6;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase">Recommended solution</h3><div class="big">'+esc(sol[0])+'</div><p>'+esc(sol[1])+'</p></section>';
-    h += '<section class="res-card" aria-labelledby="r3"><h3 id="r3">Implementation direction</h3><p>What a first step could look like:</p><ul>'+sol[2].map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ul></section>';
-    h += '<section class="res-card" aria-labelledby="r4"><h3 id="r4">Next steps</h3><ol><li>Talk through these results with us so we can validate them against how you really work.</li><li>Choose one opportunity to start with.</li><li>Agree a practical plan and timeline for a first version.</li></ol></section>';
-    h += '<section class="res-card contact" aria-labelledby="r5"><h3 id="r5">Want to turn this into a plan?</h3><p>Your results are yours, with nothing required. If you\'d like us to review them with you, leave your details and we\'ll reach out.</p>';
-    if(st.sent){ h += '<div class="thanks" role="status"><h3>Thank you</h3><p>We\'ve got your details and will be in touch.</p></div>'; }
+    h += '<p class="o-fit">'+esc(t('d.fit'))+'</p></section>';
+    h += '<section class="res-card sol" aria-labelledby="r2"><h3 id="r2" style="color:#8fb0b8;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase">'+esc(t('d.rec'))+'</h3><div class="big">'+esc(T('soln.'+r.sol))+'</div><p>'+esc(T('sold.'+r.sol))+'</p></section>';
+    h += '<section class="res-card" aria-labelledby="r3"><h3 id="r3">'+esc(t('d.impl'))+'</h3><p>'+esc(t('d.implIntro'))+'</p><ul>'+T('sols.'+r.sol).map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ul></section>';
+    h += '<section class="res-card" aria-labelledby="r4"><h3 id="r4">'+esc(t('d.nextT'))+'</h3><ol><li>'+esc(t('d.n1'))+'</li><li>'+esc(t('d.n2'))+'</li><li>'+esc(t('d.n3'))+'</li></ol></section>';
+    h += '<section class="res-card contact" aria-labelledby="r5"><h3 id="r5">'+esc(t('d.contactT'))+'</h3><p>'+esc(t('d.contactP'))+'</p>';
+    if(st.sent){ h += '<div class="thanks" role="status"><h3>'+esc(t('d.thanksT'))+'</h3><p>'+esc(t('d.thanksP'))+'</p></div>'; }
     else {
-      h += '<form id="cForm" novalidate><div class="c-grid"><div><label for="cName">Your name</label><input class="d-field" id="cName" autocomplete="name" required></div>'+
-        '<div><label for="cEmail">Work email</label><input class="d-field" id="cEmail" type="email" autocomplete="email" required></div>'+
-        '<div class="full"><label for="cCo">Company <span class="opt-lbl">(optional)</span></label><input class="d-field" id="cCo" autocomplete="organization"></div></div>'+
-        '<p class="d-err" id="cErr" role="alert"></p><div class="d-actions"><button class="btn btn-primary" type="submit">Review my results with you →</button></div></form>';
+      h += '<form id="cForm" novalidate><div class="c-grid"><div><label for="cName">'+esc(t('d.name'))+'</label><input class="d-field" id="cName" autocomplete="name" required></div>'+
+        '<div><label for="cEmail">'+esc(t('d.email'))+'</label><input class="d-field" id="cEmail" type="email" autocomplete="email" required></div>'+
+        '<div class="full"><label for="cCo">'+esc(t('d.company'))+' <span class="opt-lbl">'+esc(t('d.optional'))+'</span></label><input class="d-field" id="cCo" autocomplete="organization"></div></div>'+
+        '<p class="d-err" id="cErr" role="alert"></p><div class="d-actions"><button class="btn btn-primary" type="submit">'+esc(t('d.send'))+' <span class="arr" aria-hidden="true"></span></button></div>'+
+        '<p class="d-hint">'+T('priv.line')+'</p></form>';
     }
-    h += '</section><div class="d-actions" style="justify-content:space-between"><button class="linkbtn" type="button" id="dRestart">Start over</button><button class="linkbtn" type="button" id="dDone">Back to the page</button></div>';
+    h += '</section><div class="d-actions" style="justify-content:space-between"><button class="linkbtn" type="button" id="dRestart">'+esc(t('d.restart'))+'</button><button class="linkbtn" type="button" id="dDone">'+esc(t('d.backPage'))+'</button></div>';
     body.innerHTML = h;
     focusHead();
     if(!reduce){ requestAnimationFrame(function(){ requestAnimationFrame(function(){ body.querySelectorAll('.bar b').forEach(function(b){ b.style.width = getComputedStyle(b).getPropertyValue('--w'); }); }); }); }
@@ -843,28 +1210,30 @@ textarea.d-field{min-height:130px;resize:vertical}
     var cf = document.getElementById('cForm'); if(cf){ cf.addEventListener('submit', submitContact); }
   }
 
+  // The lead summary is always written in English (plus the visitor's language) so it is easy to read in your sheet.
   function summary(){
-    var r = st.result, lines = [];
+    var r = st.result, E = DICT.en, lines = [];
     STEPS.forEach(function(s){
-      if(s.type==='text'){ if(st.a.notes) lines.push(s.q+' '+st.a.notes); return; }
-      lines.push(s.q+' '+(st.a[s.id]||[]).map(function(i){return s.o[i][0];}).join('; '));
+      if(s.type==='text'){ if(st.a.notes) lines.push(E['step.notes.q']+' '+st.a.notes); return; }
+      lines.push(E['step.'+s.id+'.q']+' '+(st.a[s.id]||[]).map(function(i){return E['step.'+s.id+'.o'][i];}).join('; '));
     });
-    lines.push('Top opportunities: '+r.top.map(function(k){return OPP[k].n;}).join(', '));
-    lines.push('Recommended: '+SOL[r.sol][0]);
+    lines.push('Top opportunities: '+r.top.map(function(k){return E['oppn.'+k];}).join(', '));
+    lines.push('Recommended: '+E['soln.'+r.sol]);
+    lines.push('Visitor language: '+LANG);
     return lines.join('\n');
   }
 
   function submitContact(e){
     e.preventDefault();
     var n = document.getElementById('cName'), m = document.getElementById('cEmail'), c = document.getElementById('cCo'), err = document.getElementById('cErr');
-    if(!n.value.trim()){ err.textContent='Please enter your name.'; n.focus(); return; }
-    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(m.value.trim())){ err.textContent='Please enter a valid email address.'; m.focus(); return; }
-    var payload = {name:n.value.trim(),email:m.value.trim(),company:c.value.trim(),discovery:summary()};
+    if(!n.value.trim()){ err.textContent = t('d.errName'); n.focus(); return; }
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(m.value.trim())){ err.textContent = t('d.errEmail'); m.focus(); return; }
+    var payload = {name:n.value.trim(),email:m.value.trim(),company:c.value.trim(),lang:LANG,discovery:summary()};
     if(DISCOVERY_ENDPOINT){
-      err.textContent = 'Sending…';
+      err.textContent = t('d.sending');
       fetch(DISCOVERY_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload)})
         .then(function(){ st.sent = true; renderResult(); })
-        .catch(function(){ err.textContent = 'Something went wrong. Please try again in a moment.'; });
+        .catch(function(){ err.textContent = t('d.fail'); });
     } else {
       location.href = 'mailto:'+CONTACT_EMAIL+'?subject='+encodeURIComponent('AI Discovery results – '+payload.name)+'&body='+encodeURIComponent('Name: '+payload.name+'\nEmail: '+payload.email+'\nCompany: '+payload.company+'\n\n'+payload.discovery);
       st.sent = true; renderResult();
@@ -878,7 +1247,6 @@ textarea.d-field{min-height:130px;resize:vertical}
   document.getElementById('dClose').addEventListener('click', close);
   document.getElementById('dLogo').addEventListener('click', function(e){ e.preventDefault(); close(); });
   document.addEventListener('keydown', function(e){ if(e.key==='Escape' && !D.hidden){ close(); } });
-  // keep keyboard focus inside the layer
   D.addEventListener('keydown', function(e){
     if(e.key!=='Tab') return;
     var f = D.querySelectorAll('a[href],button:not([disabled]),input,textarea,[tabindex]:not([tabindex="-1"])');
@@ -888,6 +1256,15 @@ textarea.d-field{min-height:130px;resize:vertical}
     if(e.shiftKey && document.activeElement===first){ e.preventDefault(); last.focus(); }
     else if(!e.shiftKey && document.activeElement===last){ e.preventDefault(); first.focus(); }
   });
+
+  // Switching language while the discovery is open keeps the visitor's answers.
+  onLangChange = function(){
+    if(D.hidden) return;
+    if(!st.done){ save(STEPS[st.i]); render(); }
+    else { renderResult(); }
+  };
+
+  applyLang(pickLang(), false);
   if(location.hash === '#discovery'){ open(null); }
 })();
 </script>
